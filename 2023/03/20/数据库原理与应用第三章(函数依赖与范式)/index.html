@@ -1,0 +1,299 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="3.4.1 完全函数依赖和部分函数依赖                           完全函数依赖         例如：选课（学号，姓名，课程号，成绩）    （学号，课程号）→成绩    学号唯一对应成绩&#x2F;课程号也唯一对应成绩                          部分依赖函数         例如：选课（学号，姓名，课程号，成绩）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库原理与应用第三章（函数依赖与范式）">
+<meta property="og:url" content="https://whisme66.gitee.io/2023/03/20/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8%E7%AC%AC%E4%B8%89%E7%AB%A0(%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%E4%B8%8E%E8%8C%83%E5%BC%8F)/index.html">
+<meta property="og:site_name" content="小王同学">
+<meta property="og:description" content="3.4.1 完全函数依赖和部分函数依赖                           完全函数依赖         例如：选课（学号，姓名，课程号，成绩）    （学号，课程号）→成绩    学号唯一对应成绩&#x2F;课程号也唯一对应成绩                          部分依赖函数         例如：选课（学号，姓名，课程号，成绩）">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-20T14:06:00.000Z">
+<meta property="article:modified_time" content="2023-03-20T14:08:27.638Z">
+<meta property="article:author" content="whisme">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="数据库原理与应用">
+<meta name="twitter:card" content="summary"><title>数据库原理与应用第三章（函数依赖与范式） | 小王同学</title><link ref="canonical" href="https://whisme66.gitee.io/2023/03/20/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8%E7%AC%AC%E4%B8%89%E7%AB%A0(%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%E4%B8%8E%E8%8C%83%E5%BC%8F)/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">小王同学</div><div class="header-banner-info__subtitle">自律然后坚持自律</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">数据库原理与应用第三章（函数依赖与范式）</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-03-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-03-20</span></span></div></header><div class="post-body">
+        <h2 id="3-4-1-完全函数依赖和部分函数依赖"   >
+          <a href="#3-4-1-完全函数依赖和部分函数依赖" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-4-1-完全函数依赖和部分函数依赖" class="headerlink" title="3.4.1 完全函数依赖和部分函数依赖"></a>3.4.1 完全函数依赖和部分函数依赖</h2>
+      
+        <h3 id="完全函数依赖"   >
+          <a href="#完全函数依赖" class="heading-link"><i class="fas fa-link"></i></a><a href="#完全函数依赖" class="headerlink" title="完全函数依赖"></a>完全函数依赖</h3>
+      <ul>
+<li><blockquote>
+<p>例如：选课（<u>学号</u>，姓名，课程号，成绩）</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>（<u>学号</u>，课程号）→成绩</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>学号唯一对应成绩/课程号也唯一对应成绩</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="部分依赖函数"   >
+          <a href="#部分依赖函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#部分依赖函数" class="headerlink" title="部分依赖函数"></a>部分依赖函数</h3>
+      <ul>
+<li><blockquote>
+<p>例如：选课（<u>学号</u>，姓名，课程号，成绩）</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>（<u>学号</u>，课程号）→姓名</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>只有学号唯一对应姓名</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="传递依赖函数"   >
+          <a href="#传递依赖函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#传递依赖函数" class="headerlink" title="传递依赖函数"></a>传递依赖函数</h3>
+      <ul>
+<li><blockquote>
+<p>例如：学生（<u>学号</u>，姓名，性别，年龄，所在系，系主任）</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>通过学号查找到学生所在系，再通过所在系判断系主任</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>所以学号→系主任是传递函数依赖</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="非平凡函数依赖"   >
+          <a href="#非平凡函数依赖" class="heading-link"><i class="fas fa-link"></i></a><a href="#非平凡函数依赖" class="headerlink" title="非平凡函数依赖"></a>非平凡函数依赖</h3>
+      <ul>
+<li><blockquote>
+<p>例如：课程（学生号，课程号，成绩）</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>（学生号，课程号）X→成绩Y</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>成绩依赖于学生号和课程号，但成绩不是他们的子集，所以是非平凡函数依赖</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="平凡函数依赖"   >
+          <a href="#平凡函数依赖" class="heading-link"><i class="fas fa-link"></i></a><a href="#平凡函数依赖" class="headerlink" title="平凡函数依赖"></a>平凡函数依赖</h3>
+      <ul>
+<li><blockquote>
+<p>例如：课程（学生号，课程号，成绩）</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>（学生号，课程号）X→课程号Y</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>课程号依赖于学生号和课程号，但课程号Y是（学生号，课程号）X的子集</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="非平凡和平凡函数依赖总结：看Y是不是X的子集就行了"   >
+          <a href="#非平凡和平凡函数依赖总结：看Y是不是X的子集就行了" class="heading-link"><i class="fas fa-link"></i></a><a href="#非平凡和平凡函数依赖总结：看Y是不是X的子集就行了" class="headerlink" title="非平凡和平凡函数依赖总结：看Y是不是X的子集就行了"></a>非平凡和平凡函数依赖总结：<strong>看Y是不是X的子集就行了</strong></h3>
+      <ul>
+<li><blockquote>
+<p>是子集——平凡函数依赖</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>不是子集——非平凡函数依赖</p>
+</blockquote>
+</li>
+</ul>
+
+        <h2 id="3-4-2关系规范化的目的"   >
+          <a href="#3-4-2关系规范化的目的" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-4-2关系规范化的目的" class="headerlink" title="3.4.2关系规范化的目的"></a>3.4.2关系规范化的目的</h2>
+      <ul>
+<li><blockquote>
+<p>避免以下情况出现</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>数据冗余大</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>操作异常</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>更新异常</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>插入异常</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>删除异常</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><blockquote>
+<p>一个好的关系模式：无操作异常，数据冗余尽量少</p>
+</blockquote>
+</li>
+</ul>
+
+        <h3 id="什么是范式"   >
+          <a href="#什么是范式" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是范式" class="headerlink" title="什么是范式"></a>什么是范式</h3>
+      <ul>
+<li><blockquote>
+<p>范式(Normal Forms，简记NF)一个规则序列，衡量关系模式的标准。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>关系模式的规范化按照从低级到高级的等级分:第一范式(1NF),第二范式_（2NF)，第三范式（3NF）和BCNF，第四范式和第五范式等等。满足1NF的关系称为规范化关系。</p>
+</blockquote>
+</li>
+</ul>
+
+        <h3 id="什么是关系规范化"   >
+          <a href="#什么是关系规范化" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是关系规范化" class="headerlink" title="什么是关系规范化"></a>什么是关系规范化</h3>
+      <ul>
+<li><blockquote>
+<p>低一级范式的关系模式，通过模式分解可以转换为若干个高一级范式的关系模式的集合，这个过程称为关系规范化。</p>
+</blockquote>
+</li>
+</ul>
+
+        <h3 id="什么是最小函数依赖集FD"   >
+          <a href="#什么是最小函数依赖集FD" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是最小函数依赖集FD" class="headerlink" title="什么是最小函数依赖集FD"></a>什么是最小函数依赖集FD</h3>
+      <ul>
+<li><blockquote>
+<p>概念：</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>(1）FD集中任何一个函数依赖的<em><strong>右部仅含有一个属性</strong></em>。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>(2）FD集中所有函数依赖的<em><strong>左边都没有冗余属性</strong></em>。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>(3）FD集中<em><strong>不存在冗余的</strong></em>函数依赖。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><blockquote>
+<p>例如：学生关系S（学号，姓名,性别,课程号,成绩)关系S中最小函数依赖集为:</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>最小函数依赖集：</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>学号→姓名,学号→性别，(学号，课程号）→成绩;</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><blockquote>
+<p>存在冗余的函数依赖：</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>(学号，课程号）→姓名;</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="第一范式"   >
+          <a href="#第一范式" class="heading-link"><i class="fas fa-link"></i></a><a href="#第一范式" class="headerlink" title="第一范式"></a>第一范式</h3>
+      <ul>
+<li><blockquote>
+<p>关系模式R的所有属性都是不可再分的基本数据项</p>
+</blockquote>
+</li>
+</ul>
+
+        <h3 id="第二范式"   >
+          <a href="#第二范式" class="heading-link"><i class="fas fa-link"></i></a><a href="#第二范式" class="headerlink" title="第二范式"></a>第二范式</h3>
+      <ul>
+<li><blockquote>
+<p>每个非主属性完全函数依赖于码</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>主关键字是属性的组合,这样的关系模式可能不是第二范式。</p>
+</blockquote>
+</li>
+</ul>
+
+        <h3 id="第三范式"   >
+          <a href="#第三范式" class="heading-link"><i class="fas fa-link"></i></a><a href="#第三范式" class="headerlink" title="第三范式"></a>第三范式</h3>
+      <ul>
+<li><blockquote>
+<p>每个非主属性都不传递依赖于R的码</p>
+</blockquote>
+</li>
+</ul>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://whisme66.gitee.io">whisme</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://whisme66.gitee.io/2023/03/20/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8%E7%AC%AC%E4%B8%89%E7%AB%A0(%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%E4%B8%8E%E8%8C%83%E5%BC%8F)/">https://whisme66.gitee.io/2023/03/20/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8%E7%AC%AC%E4%B8%89%E7%AB%A0(%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%E4%B8%8E%E8%8C%83%E5%BC%8F)/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://whisme66.gitee.io/tags/%E7%AC%94%E8%AE%B0/">笔记</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://whisme66.gitee.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8/">数据库原理与应用</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2023/03/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8%E7%AC%AC%E5%9B%9B%E7%AB%A0/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">数据库原理与应用（第三章）</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2023/03/20/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AC%AC%E4%BA%8C%E7%AB%A0/"><span class="paginator-prev__text">云计算导论（第二章）</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-1-%E5%AE%8C%E5%85%A8%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%E5%92%8C%E9%83%A8%E5%88%86%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96"><span class="toc-number">1.</span> <span class="toc-text">
+          3.4.1 完全函数依赖和部分函数依赖</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E5%85%A8%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96"><span class="toc-number">1.1.</span> <span class="toc-text">
+          完全函数依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E5%88%86%E4%BE%9D%E8%B5%96%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.</span> <span class="toc-text">
+          部分依赖函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E9%80%92%E4%BE%9D%E8%B5%96%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.</span> <span class="toc-text">
+          传递依赖函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E5%B9%B3%E5%87%A1%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96"><span class="toc-number">1.4.</span> <span class="toc-text">
+          非平凡函数依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E5%87%A1%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96"><span class="toc-number">1.5.</span> <span class="toc-text">
+          平凡函数依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E5%B9%B3%E5%87%A1%E5%92%8C%E5%B9%B3%E5%87%A1%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%E6%80%BB%E7%BB%93%EF%BC%9A%E7%9C%8BY%E6%98%AF%E4%B8%8D%E6%98%AFX%E7%9A%84%E5%AD%90%E9%9B%86%E5%B0%B1%E8%A1%8C%E4%BA%86"><span class="toc-number">1.6.</span> <span class="toc-text">
+          非平凡和平凡函数依赖总结：看Y是不是X的子集就行了</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-2%E5%85%B3%E7%B3%BB%E8%A7%84%E8%8C%83%E5%8C%96%E7%9A%84%E7%9B%AE%E7%9A%84"><span class="toc-number">2.</span> <span class="toc-text">
+          3.4.2关系规范化的目的</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%8C%83%E5%BC%8F"><span class="toc-number">2.1.</span> <span class="toc-text">
+          什么是范式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%B3%E7%B3%BB%E8%A7%84%E8%8C%83%E5%8C%96"><span class="toc-number">2.2.</span> <span class="toc-text">
+          什么是关系规范化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%B0%8F%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%E9%9B%86FD"><span class="toc-number">2.3.</span> <span class="toc-text">
+          什么是最小函数依赖集FD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E8%8C%83%E5%BC%8F"><span class="toc-number">2.4.</span> <span class="toc-text">
+          第一范式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E8%8C%83%E5%BC%8F"><span class="toc-number">2.5.</span> <span class="toc-text">
+          第二范式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E8%8C%83%E5%BC%8F"><span class="toc-number">2.6.</span> <span class="toc-text">
+          第三范式</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/assets/avatar.png" alt="avatar"></div></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">6</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">9</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>whisme</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>

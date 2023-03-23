@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="用Python 实现 HTTP 请求                           urllib模块                           代码1：通过urllib.request子模块发送GET请求获取网页内容       12345import urllib.requestresponse &#x3D; urllib.request.urlop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python实现HTTP请求">
+<meta property="og:url" content="https://whisme66.gitee.io/2022/09/14/Python%E5%AE%9E%E7%8E%B0HTTP%E8%AF%B7%E6%B1%82/index.html">
+<meta property="og:site_name" content="小王同学">
+<meta property="og:description" content="用Python 实现 HTTP 请求                           urllib模块                           代码1：通过urllib.request子模块发送GET请求获取网页内容       12345import urllib.requestresponse &#x3D; urllib.request.urlop">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/Whisme/picx_hosting@master/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%9B%BE%E7%89%87/%E5%AE%89%E8%A3%85%E5%BA%93.67nwrrvk21s0.webp">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/Whisme/picx_hosting@master/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%9B%BE%E7%89%87/Python-Interpreter.3e8df1t3b1o0.webp">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/Whisme/picx_hosting@master/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%9B%BE%E7%89%87/pip-install.22i2sajtz4v4.webp">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/Whisme/picx_hosting@master/公众号图片/公众号二维码.6nxko6nkp800.webp">
+<meta property="article:published_time" content="2022-09-14T15:26:11.000Z">
+<meta property="article:modified_time" content="2022-10-13T02:58:42.807Z">
+<meta property="article:author" content="whisme">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="数据采集与预处理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.staticaly.com/gh/Whisme/picx_hosting@master/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%9B%BE%E7%89%87/%E5%AE%89%E8%A3%85%E5%BA%93.67nwrrvk21s0.webp"><title>Python实现HTTP请求 | 小王同学</title><link ref="canonical" href="https://whisme66.gitee.io/2022/09/14/Python%E5%AE%9E%E7%8E%B0HTTP%E8%AF%B7%E6%B1%82/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">小王同学</div><div class="header-banner-info__subtitle">自律然后坚持自律</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Python实现HTTP请求</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-09-14</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-10-13</span></span></div></header><div class="post-body">
+        <h1 id="用Python-实现-HTTP-请求"   >
+          <a href="#用Python-实现-HTTP-请求" class="heading-link"><i class="fas fa-link"></i></a><a href="#用Python-实现-HTTP-请求" class="headerlink" title="用Python 实现 HTTP 请求"></a>用Python 实现 HTTP 请求</h1>
+      
+        <h2 id="urllib模块"   >
+          <a href="#urllib模块" class="heading-link"><i class="fas fa-link"></i></a><a href="#urllib模块" class="headerlink" title="urllib模块"></a>urllib模块</h2>
+      
+        <h3 id="代码1：通过urllib-request子模块发送GET请求获取网页内容"   >
+          <a href="#代码1：通过urllib-request子模块发送GET请求获取网页内容" class="heading-link"><i class="fas fa-link"></i></a><a href="#代码1：通过urllib-request子模块发送GET请求获取网页内容" class="headerlink" title="代码1：通过urllib.request子模块发送GET请求获取网页内容"></a>代码1：通过urllib.request子模块发送GET请求获取网页内容</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request</span><br><span class="line"></span><br><span class="line">response = urllib.request.urlopen(&quot;https://www.baidu.com&quot;)</span><br><span class="line">html = response.read()</span><br><span class="line">print(html)</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="代码2：通过urllib-request子模块发送POST请求获取网页内容"   >
+          <a href="#代码2：通过urllib-request子模块发送POST请求获取网页内容" class="heading-link"><i class="fas fa-link"></i></a><a href="#代码2：通过urllib-request子模块发送POST请求获取网页内容" class="headerlink" title="代码2：通过urllib.request子模块发送POST请求获取网页内容"></a>代码2：通过urllib.request子模块发送POST请求获取网页内容</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import urllib.parse</span><br><span class="line">import urllib.request</span><br><span class="line"></span><br><span class="line">url = &#x27;https://fanyi.baidu.com/sug&#x27;</span><br><span class="line">data = &#123;&#x27;kw&#x27;:&#x27;苹果&#x27;,&#125;</span><br><span class="line">data = urllib.parse.urlencode(data)</span><br><span class="line">data = data.encode()</span><br><span class="line">response = urllib.request.urlopen(url=url,data=data)</span><br><span class="line">data = response.read()</span><br><span class="line">print(data)</span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="urllib3-模块"   >
+          <a href="#urllib3-模块" class="heading-link"><i class="fas fa-link"></i></a><a href="#urllib3-模块" class="headerlink" title="urllib3 模块"></a>urllib3 模块</h2>
+      
+        <h3 id="代码1：通过GET请求获取网页"   >
+          <a href="#代码1：通过GET请求获取网页" class="heading-link"><i class="fas fa-link"></i></a><a href="#代码1：通过GET请求获取网页" class="headerlink" title="代码1：通过GET请求获取网页"></a>代码1：通过GET请求获取网页</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import urllib3</span><br><span class="line">http = urllib3.PoolManager()</span><br><span class="line"></span><br><span class="line">response = http.request(&#x27;GET&#x27;,&#x27;http://www.baidu.com&#x27;)</span><br><span class="line">print(response.status)</span><br><span class="line">print(response.data)</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="1-安装模块"   >
+          <a href="#1-安装模块" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-安装模块" class="headerlink" title="1.安装模块"></a>1.安装模块</h3>
+      <ul>
+<li>书本上说使用<strong>pip install urllib3</strong>的指令在CMD命令中安装该库</li>
+<li>其实可以直接在<strong>pycharm</strong>中安装<strong>urllib3</strong>库</li>
+</ul>
+<p><img src="https://cdn.staticaly.com/gh/Whisme/picx_hosting@master/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%9B%BE%E7%89%87/%E5%AE%89%E8%A3%85%E5%BA%93.67nwrrvk21s0.webp" alt="安装库"></p>
+<ul>
+<li>输入<strong>import urllib3</strong> 下方会有红色波浪线</li>
+<li>点击<strong>install package urllib3</strong></li>
+<li>也可以鼠标放到 urllib3旁边——使用快捷键<strong>Alt+Shift+Enter</strong>  </li>
+</ul>
+
+        <h3 id="2-没有红色波浪线的情况下安装模块"   >
+          <a href="#2-没有红色波浪线的情况下安装模块" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-没有红色波浪线的情况下安装模块" class="headerlink" title="2.没有红色波浪线的情况下安装模块"></a>2.没有红色波浪线的情况下安装模块</h3>
+      <ul>
+<li>由于安装pycharm版本问题，可能出现不提示红色波浪线等情况</li>
+<li>打开pycharm工具栏<strong>——file——settings</strong></li>
+<li>搜索Python Interpreter<br><img src="https://cdn.staticaly.com/gh/Whisme/picx_hosting@master/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%9B%BE%E7%89%87/Python-Interpreter.3e8df1t3b1o0.webp" alt="Python-Interpreter"></li>
+<li>双击<strong>pip</strong>——然后在搜索框中搜索想要安装的<strong>urllib3</strong>——点击左下角<strong>Install package</strong>安装</li>
+<li>其他任意模块（也可以叫包）都可以使用该方法安装<br><img src="https://cdn.staticaly.com/gh/Whisme/picx_hosting@master/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%9B%BE%E7%89%87/pip-install.22i2sajtz4v4.webp" alt="pip-install">
+        <h3 id="代码2：通过POST请求获取网页"   >
+          <a href="#代码2：通过POST请求获取网页" class="heading-link"><i class="fas fa-link"></i></a><a href="#代码2：通过POST请求获取网页" class="headerlink" title="代码2：通过POST请求获取网页"></a>代码2：通过POST请求获取网页</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import urllib3</span><br><span class="line"></span><br><span class="line">http = urllib3.PoolManager()</span><br><span class="line">response = http.request(&#x27;POST&#x27;,</span><br><span class="line">                        &#x27;https://fanyi.baidu.com/sug&#x27;</span><br><span class="line">                        , fields=&#123;&#x27;kw&#x27;: &#x27;苹果&#x27;, &#125;)</span><br><span class="line">print(response.data)</span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="requests模块"   >
+          <a href="#requests模块" class="heading-link"><i class="fas fa-link"></i></a><a href="#requests模块" class="headerlink" title="requests模块"></a>requests模块</h2>
+      </li>
+<li>requests模块的安装与urllib3一样不再重复操作了
+        <h3 id="代码1：通过GET方式，打印多种请求信息"   >
+          <a href="#代码1：通过GET方式，打印多种请求信息" class="heading-link"><i class="fas fa-link"></i></a><a href="#代码1：通过GET方式，打印多种请求信息" class="headerlink" title="代码1：通过GET方式，打印多种请求信息"></a>代码1：通过GET方式，打印多种请求信息</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">response = requests.get(&#x27;http://www.baidu.com&#x27;)</span><br><span class="line">print(&#x27;状态码:&#x27;, response.status_code)</span><br><span class="line">print(&#x27;url:&#x27;, response.url)</span><br><span class="line">print(&#x27;header:&#x27;, response.headers)</span><br><span class="line">print(&#x27;cookie:&#x27;, response.cookies)</span><br><span class="line">print(&#x27;text:&#x27;, response.text)</span><br><span class="line">print(&#x27;content:&#x27;, response.content)</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="代码2：以POST请求方式发送HTTP网页请求"   >
+          <a href="#代码2：以POST请求方式发送HTTP网页请求" class="heading-link"><i class="fas fa-link"></i></a><a href="#代码2：以POST请求方式发送HTTP网页请求" class="headerlink" title="代码2：以POST请求方式发送HTTP网页请求"></a>代码2：以POST请求方式发送HTTP网页请求</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">data = &#123;&#x27;kw&#x27;:&#x27;苹果&#x27;,&#125;</span><br><span class="line">response = requests.post(&#x27;https://fanyi.baidu.com/sug&#x27;,data=data)</span><br><span class="line">print(response.content)</span><br></pre></td></tr></table></div></figure></li>
+</ul>
+
+        <h1 id="最后欢迎关注我的微信公众号"   >
+          <a href="#最后欢迎关注我的微信公众号" class="heading-link"><i class="fas fa-link"></i></a><a href="#最后欢迎关注我的微信公众号" class="headerlink" title="最后欢迎关注我的微信公众号~"></a>最后欢迎关注我的微信公众号~</h1>
+      <div align=center>
+<img src="https://cdn.staticaly.com/gh/Whisme/picx_hosting@master/公众号图片/公众号二维码.6nxko6nkp800.webp">
+</div>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://whisme66.gitee.io">whisme</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://whisme66.gitee.io/2022/09/14/Python%E5%AE%9E%E7%8E%B0HTTP%E8%AF%B7%E6%B1%82/">https://whisme66.gitee.io/2022/09/14/Python%E5%AE%9E%E7%8E%B0HTTP%E8%AF%B7%E6%B1%82/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://whisme66.gitee.io/tags/%E7%AC%94%E8%AE%B0/">笔记</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://whisme66.gitee.io/tags/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E4%B8%8E%E9%A2%84%E5%A4%84%E7%90%86/">数据采集与预处理</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/09/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">计算机网络的体系结构</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/09/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/"><span class="paginator-prev__text">计算机网络笔记</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%A8Python-%E5%AE%9E%E7%8E%B0-HTTP-%E8%AF%B7%E6%B1%82"><span class="toc-number">1.</span> <span class="toc-text">
+          用Python 实现 HTTP 请求</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#urllib%E6%A8%A1%E5%9D%97"><span class="toc-number">1.1.</span> <span class="toc-text">
+          urllib模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%811%EF%BC%9A%E9%80%9A%E8%BF%87urllib-request%E5%AD%90%E6%A8%A1%E5%9D%97%E5%8F%91%E9%80%81GET%E8%AF%B7%E6%B1%82%E8%8E%B7%E5%8F%96%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.1.</span> <span class="toc-text">
+          代码1：通过urllib.request子模块发送GET请求获取网页内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%812%EF%BC%9A%E9%80%9A%E8%BF%87urllib-request%E5%AD%90%E6%A8%A1%E5%9D%97%E5%8F%91%E9%80%81POST%E8%AF%B7%E6%B1%82%E8%8E%B7%E5%8F%96%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.2.</span> <span class="toc-text">
+          代码2：通过urllib.request子模块发送POST请求获取网页内容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#urllib3-%E6%A8%A1%E5%9D%97"><span class="toc-number">1.2.</span> <span class="toc-text">
+          urllib3 模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%811%EF%BC%9A%E9%80%9A%E8%BF%87GET%E8%AF%B7%E6%B1%82%E8%8E%B7%E5%8F%96%E7%BD%91%E9%A1%B5"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+          代码1：通过GET请求获取网页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+          1.安装模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%B2%A1%E6%9C%89%E7%BA%A2%E8%89%B2%E6%B3%A2%E6%B5%AA%E7%BA%BF%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97"><span class="toc-number">1.2.3.</span> <span class="toc-text">
+          2.没有红色波浪线的情况下安装模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%812%EF%BC%9A%E9%80%9A%E8%BF%87POST%E8%AF%B7%E6%B1%82%E8%8E%B7%E5%8F%96%E7%BD%91%E9%A1%B5"><span class="toc-number">1.2.4.</span> <span class="toc-text">
+          代码2：通过POST请求获取网页</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#requests%E6%A8%A1%E5%9D%97"><span class="toc-number">1.3.</span> <span class="toc-text">
+          requests模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%811%EF%BC%9A%E9%80%9A%E8%BF%87GET%E6%96%B9%E5%BC%8F%EF%BC%8C%E6%89%93%E5%8D%B0%E5%A4%9A%E7%A7%8D%E8%AF%B7%E6%B1%82%E4%BF%A1%E6%81%AF"><span class="toc-number">1.3.1.</span> <span class="toc-text">
+          代码1：通过GET方式，打印多种请求信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%812%EF%BC%9A%E4%BB%A5POST%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E5%8F%91%E9%80%81HTTP%E7%BD%91%E9%A1%B5%E8%AF%B7%E6%B1%82"><span class="toc-number">1.3.2.</span> <span class="toc-text">
+          代码2：以POST请求方式发送HTTP网页请求</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%80%E5%90%8E%E6%AC%A2%E8%BF%8E%E5%85%B3%E6%B3%A8%E6%88%91%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7"><span class="toc-number">2.</span> <span class="toc-text">
+          最后欢迎关注我的微信公众号~</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/assets/avatar.png" alt="avatar"></div></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">6</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">9</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>whisme</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>

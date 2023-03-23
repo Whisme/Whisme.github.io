@@ -1,0 +1,1290 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta property="og:type" content="website">
+<meta property="og:title" content="小王同学">
+<meta property="og:url" content="https://whisme66.gitee.io/index.html">
+<meta property="og:site_name" content="小王同学">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="whisme">
+<meta name="twitter:card" content="summary"><title>小王同学</title><link ref="canonical" href="https://whisme66.gitee.io/index.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">小王同学</div><div class="header-banner-info__subtitle">自律然后坚持自律</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2023/03/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8%E7%AC%AC%E5%9B%9B%E7%AB%A0/">数据库原理与应用（第三章）</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-03-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-03-23</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="数据库设计（第四章）"   >
+          <a href="#数据库设计（第四章）" class="heading-link"><i class="fas fa-link"></i></a><a href="#数据库设计（第四章）" class="headerlink" title="数据库设计（第四章）"></a>数据库设计（第四章）</h1>
+      
+        <h2 id="4-1数据库设计概述"   >
+          <a href="#4-1数据库设计概述" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-1数据库设计概述" class="headerlink" title="4.1数据库设计概述"></a>4.1数据库设计概述</h2>
+      <ul>
+<li><blockquote>
+<p>数据库设计</p>
+</blockquote>
+<ul>
+<li>根据用户需求设计数据库结构的过程</li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="数据库设计方法"   >
+          <a href="#数据库设计方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#数据库设计方法" class="headerlink" title="数据库设计方法"></a>数据库设计方法</h3>
+      <ul>
+<li>按照规范设计方法
+        <h3 id="数据库设计的六个阶段"   >
+          <a href="#数据库设计的六个阶段" class="heading-link"><i class="fas fa-link"></i></a><a href="#数据库设计的六个阶段" class="headerlink" title="数据库设计的六个阶段"></a>数据库设计的六个阶段</h3>
+      </li>
+</ul>
+<ol>
+<li>需求分析（重点）</li>
+<li>概念结构设计（重点）</li>
+<li>逻辑结构设计（重点）</li>
+<li>数据库物理设计</li>
+<li>数据库实施</li>
+<li>数据库的运行和维护</li>
+</ol>
+
+        <h2 id="4-2需求分析"   >
+          <a href="#4-2需求分析" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-2需求分析" class="headerlink" title="4.2需求分析"></a>4.2需求分析</h2>
+      <ul>
+<li><blockquote>
+<p>需求分析阶段的重要性</p>
+</blockquote>
+<ol>
+<li>掌握用户的需求，理解用户的需求。</li>
+<li>需求分析的结果是否准确地反映了用户的实际要求。</li>
+<li>需求分析的作用要远远大于其它各个阶段</li>
+</ol>
+</li>
+<li><blockquote>
+<p>明确需求分析的任务</p>
+</blockquote>
+<ol>
+<li>详细调查现实世界要处理的对象，明确用户的各种需求，并在此基础上确定新系统的功能。（要根据用户需求设计）</li>
+<li>考虑今后可能的扩充和改变</li>
+</ol>
+</li>
+<li><blockquote>
+<p>需求分析的重点是<em><strong>数据</strong></em>和<em><strong>处理</strong></em></p>
+</blockquote>
+<ol>
+<li>数据要求：<ul>
+<li>确定在数据库中需要存储哪些数据。</li>
+</ul>
+</li>
+<li>处理要求：<ul>
+<li>指用户要完成什么处理功能。</li>
+</ul>
+</li>
+<li>安全与完整性要求：<ul>
+<li> 安全性要求是指对数据库的用户、角色、权限、加密方法等安<br>全保密措施的要求</li>
+<li>完整性要求是指对数据取值范围、数据之间<br>各种联系的要求等等。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+
+        <h2 id="4-2-2需求分析的方法"   >
+          <a href="#4-2-2需求分析的方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-2-2需求分析的方法" class="headerlink" title="4.2.2需求分析的方法"></a>4.2.2需求分析的方法</h2>
+      <ol>
+<li>调查组织机构情况</li>
+<li>调查各部门的业务活动情况</li>
+<li>明确用户对系统的各种要求（数据、处理、安全与完整性）</li>
+<li>确定新系统的边界（计算机什么可以做，什么不能做）</li>
+<li>产生数据流图、功能模块图及数据字典等，编写系统需求分析报告。</li>
+</ol>
+
+        <h2 id="4-3概念结构设计"   >
+          <a href="#4-3概念结构设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-3概念结构设计" class="headerlink" title="4.3概念结构设计"></a>4.3概念结构设计</h2>
+      <ul>
+<li><blockquote>
+<p>主要步骤（三步）</p>
+</blockquote>
+<ol>
+<li>设计局部E-R 图</li>
+<li>设计全局E-R 图：将局部E-R 图集成为全局概念模式</li>
+<li>评审</li>
+</ol>
+</li>
+</ul>
+
+        <h3 id="局部E-R图设计"   >
+          <a href="#局部E-R图设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#局部E-R图设计" class="headerlink" title="局部E-R图设计"></a>局部E-R图设计</h3>
+      <ul>
+<li><blockquote>
+<p>确定局部结构范围：</p>
+</blockquote>
+<ol>
+<li>将整体任务划分成几个系统，又把每个系统划分成几个子系统。<ul>
+<li>按照功能划分</li>
+<li>按照业务逻辑划分</li>
+<li>按照部门划分</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><blockquote>
+<p>划分原则：</p>
+</blockquote>
+<ol>
+<li>独立性原则：<ul>
+<li>划分在一个范围内的应用功能具有独立性与完整性，与其他范围内的应用有最少的联系。</li>
+</ul>
+</li>
+<li>规模适度原则：<ul>
+<li>局部E-R图规模应适度，一般以6个左右实体为宜。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><blockquote>
+<p>确定实体、属性、主键</p>
+</blockquote>
+<ol>
+<li>根据<strong>问题语义</strong>和<strong>用户需求</strong>识别实体中存在的<em><strong>固有属性</strong></em><ul>
+<li>实体：一般需要多个属性进行描述</li>
+<li>属性：可以用一个值表达清楚</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><blockquote>
+<p>确定实体间联系及其属性</p>
+</blockquote>
+<ul>
+<li>根据<strong>问题语义</strong>或者<strong>事物规则</strong>确定实体间联系<ol>
+<li>一对一联系</li>
+<li>一对多联系</li>
+<li>多对多联系</li>
+</ol>
+</li>
+<li>联系本身可以有属性，当一个属性不宜属于任一实体时，可定<br>义为实体之间联系的属性。</li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="4-3全局E-R图设计流程"   >
+          <a href="#4-3全局E-R图设计流程" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-3全局E-R图设计流程" class="headerlink" title="4.3全局E-R图设计流程"></a>4.3全局E-R图设计流程</h2>
+      <ul>
+<li><blockquote>
+<p><strong>确定公共实体→消除冲突→合并→全局优化</strong></p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>确定公共实体<ul>
+<li>同名实体，具有相同键的实体</li>
+</ul>
+</li>
+<li>消除冲突<ul>
+<li>局部E-R模型之间不一致的地方，称之为冲突。</li>
+<li>冲突分为属性冲突，结构冲突和命名冲突。<ul>
+<li>属性冲突<ul>
+<li>属性值的类型、取值范围或取值集合不同。</li>
+</ul>
+</li>
+<li>结构冲突<ul>
+<li>同一对象在不同应用中的不同抽象。</li>
+<li>同一实体在不同局部E-R图中属性组成不同</li>
+<li>实体间联系在不同局部E-R图中呈现不同的类型。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>命名冲突<ul>
+<li>包括属性名、实体名、联系名之间的冲突。<ul>
+<li>同名异义，即不同意义的对象具有相同的名字；</li>
+<li>异名同义，即同一意义的对象具有不同的名字。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+        <h2 id="4-3局部E-R图的合并"   >
+          <a href="#4-3局部E-R图的合并" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-3局部E-R图的合并" class="headerlink" title="4.3局部E-R图的合并"></a>4.3局部E-R图的合并</h2>
+      <ul>
+<li><blockquote>
+<p>合并原则：从公共实体开始，两两合并，先合并那些有联系的局部<br>结构，最后再加入独立的局部结构。</p>
+</blockquote>
+</li>
+</ul>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2023/03/20/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8%E7%AC%AC%E4%B8%89%E7%AB%A0(%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%E4%B8%8E%E8%8C%83%E5%BC%8F)/">数据库原理与应用第三章（函数依赖与范式）</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-03-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-03-20</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="3-4-1-完全函数依赖和部分函数依赖"   >
+          <a href="#3-4-1-完全函数依赖和部分函数依赖" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-4-1-完全函数依赖和部分函数依赖" class="headerlink" title="3.4.1 完全函数依赖和部分函数依赖"></a>3.4.1 完全函数依赖和部分函数依赖</h2>
+      
+        <h3 id="完全函数依赖"   >
+          <a href="#完全函数依赖" class="heading-link"><i class="fas fa-link"></i></a><a href="#完全函数依赖" class="headerlink" title="完全函数依赖"></a>完全函数依赖</h3>
+      <ul>
+<li><blockquote>
+<p>例如：选课（<u>学号</u>，姓名，课程号，成绩）</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>（<u>学号</u>，课程号）→成绩</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>学号唯一对应成绩/课程号也唯一对应成绩</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="部分依赖函数"   >
+          <a href="#部分依赖函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#部分依赖函数" class="headerlink" title="部分依赖函数"></a>部分依赖函数</h3>
+      <ul>
+<li><blockquote>
+<p>例如：选课（<u>学号</u>，姓名，课程号，成绩）</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>（<u>学号</u>，课程号）→姓名</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>只有学号唯一对应姓名</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="传递依赖函数"   >
+          <a href="#传递依赖函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#传递依赖函数" class="headerlink" title="传递依赖函数"></a>传递依赖函数</h3>
+      <ul>
+<li><blockquote>
+<p>例如：学生（<u>学号</u>，姓名，性别，年龄，所在系，系主任）</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>通过学号查找到学生所在系，再通过所在系判断系主任</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>所以学号→系主任是传递函数依赖</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="非平凡函数依赖"   >
+          <a href="#非平凡函数依赖" class="heading-link"><i class="fas fa-link"></i></a><a href="#非平凡函数依赖" class="headerlink" title="非平凡函数依赖"></a>非平凡函数依赖</h3>
+      <ul>
+<li><blockquote>
+<p>例如：课程（学生号，课程号，成绩）</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>（学生号，课程号）X→成绩Y</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>成绩依赖于学生号和课程号，但成绩不是他们的子集，所以是非平凡函数依赖</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="平凡函数依赖"   >
+          <a href="#平凡函数依赖" class="heading-link"><i class="fas fa-link"></i></a><a href="#平凡函数依赖" class="headerlink" title="平凡函数依赖"></a>平凡函数依赖</h3>
+      <ul>
+<li><blockquote>
+<p>例如：课程（学生号，课程号，成绩）</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>（学生号，课程号）X→课程号Y</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>课程号依赖于学生号和课程号，但课程号Y是（学生号，课程号）X的子集</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="非平凡和平凡函数依赖总结：看Y是不是X的子集就行了"   >
+          <a href="#非平凡和平凡函数依赖总结：看Y是不是X的子集就行了" class="heading-link"><i class="fas fa-link"></i></a><a href="#非平凡和平凡函数依赖总结：看Y是不是X的子集就行了" class="headerlink" title="非平凡和平凡函数依赖总结：看Y是不是X的子集就行了"></a>非平凡和平凡函数依赖总结：<strong>看Y是不是X的子集就行了</strong></h3>
+      <ul>
+<li><blockquote>
+<p>是子集——平凡函数依赖</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>不是子集——非平凡函数依赖</p>
+</blockquote>
+</li>
+</ul>
+
+        <h2 id="3-4-2关系规范化的目的"   >
+          <a href="#3-4-2关系规范化的目的" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-4-2关系规范化的目的" class="headerlink" title="3.4.2关系规范化的目的"></a>3.4.2关系规范化的目的</h2>
+      <ul>
+<li><blockquote>
+<p>避免以下情况出现</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>数据冗余大</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>操作异常</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>更新异常</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>插入异常</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>删除异常</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><blockquote>
+<p>一个好的关系模式：无操作异常，数据冗余尽量少</p>
+</blockquote>
+</li>
+</ul>
+
+        <h3 id="什么是范式"   >
+          <a href="#什么是范式" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是范式" class="headerlink" title="什么是范式"></a>什么是范式</h3>
+      <ul>
+<li><blockquote>
+<p>范式(Normal Forms，简记NF)一个规则序列，衡量关系模式的标准。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>关系模式的规范化按照从低级到高级的等级分:第一范式(1NF),第二范式_（2NF)，第三范式（3NF）和BCNF，第四范式和第五范式等等。满足1NF的关系称为规范化关系。</p>
+</blockquote>
+</li>
+</ul>
+
+        <h3 id="什么是关系规范化"   >
+          <a href="#什么是关系规范化" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是关系规范化" class="headerlink" title="什么是关系规范化"></a>什么是关系规范化</h3>
+      <ul>
+<li><blockquote>
+<p>低一级范式的关系模式，通过模式分解可以转换为若干个高一级范式的关系模式的集合，这个过程称为关系规范化。</p>
+</blockquote>
+</li>
+</ul>
+
+        <h3 id="什么是最小函数依赖集FD"   >
+          <a href="#什么是最小函数依赖集FD" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是最小函数依赖集FD" class="headerlink" title="什么是最小函数依赖集FD"></a>什么是最小函数依赖集FD</h3>
+      <ul>
+<li><blockquote>
+<p>概念：</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>(1）FD集中任何一个函数依赖的<em><strong>右部仅含有一个属性</strong></em>。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>(2）FD集中所有函数依赖的<em><strong>左边都没有冗余属性</strong></em>。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>(3）FD集中<em><strong>不存在冗余的</strong></em>函数依赖。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><blockquote>
+<p>例如：学生关系S（学号，姓名,性别,课程号,成绩)关系S中最小函数依赖集为:</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>最小函数依赖集：</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>学号→姓名,学号→性别，(学号，课程号）→成绩;</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><blockquote>
+<p>存在冗余的函数依赖：</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>(学号，课程号）→姓名;</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="第一范式"   >
+          <a href="#第一范式" class="heading-link"><i class="fas fa-link"></i></a><a href="#第一范式" class="headerlink" title="第一范式"></a>第一范式</h3>
+      <ul>
+<li><blockquote>
+<p>关系模式R的所有属性都是不可再分的基本数据项</p>
+</blockquote>
+</li>
+</ul>
+
+        <h3 id="第二范式"   >
+          <a href="#第二范式" class="heading-link"><i class="fas fa-link"></i></a><a href="#第二范式" class="headerlink" title="第二范式"></a>第二范式</h3>
+      <ul>
+<li><blockquote>
+<p>每个非主属性完全函数依赖于码</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>主关键字是属性的组合,这样的关系模式可能不是第二范式。</p>
+</blockquote>
+</li>
+</ul>
+
+        <h3 id="第三范式"   >
+          <a href="#第三范式" class="heading-link"><i class="fas fa-link"></i></a><a href="#第三范式" class="headerlink" title="第三范式"></a>第三范式</h3>
+      <ul>
+<li><blockquote>
+<p>每个非主属性都不传递依赖于R的码</p>
+</blockquote>
+</li>
+</ul>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2023/03/20/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AC%AC%E4%BA%8C%E7%AB%A0/">云计算导论（第二章）</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-03-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-03-20</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="云计算的关键技术（必考）"   >
+          <a href="#云计算的关键技术（必考）" class="heading-link"><i class="fas fa-link"></i></a><a href="#云计算的关键技术（必考）" class="headerlink" title="云计算的关键技术（必考）"></a>云计算的关键技术（必考）</h1>
+      
+        <h2 id="分布式海量数据存储"   >
+          <a href="#分布式海量数据存储" class="heading-link"><i class="fas fa-link"></i></a><a href="#分布式海量数据存储" class="headerlink" title="分布式海量数据存储"></a>分布式海量数据存储</h2>
+      <ul>
+<li><blockquote>
+<p>云计算系统由大量服务组成，同时为大量用户服务。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>主要采用<strong>对象存储</strong></p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>云计算系统广泛使用的存储系统是：GFS和HDFS</p>
+</blockquote>
+</li>
+</ul>
+
+        <h2 id="云管理平台技术"   >
+          <a href="#云管理平台技术" class="heading-link"><i class="fas fa-link"></i></a><a href="#云管理平台技术" class="headerlink" title="云管理平台技术"></a>云管理平台技术</h2>
+      <ul>
+<li><blockquote>
+<p>云平台技术能够使大量的服务器协同工作，方便地进行业务部署，快速发现和恢复系统故障，通过自动化、智能化的手段实现大规模系统的可靠运营。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>云计算平台的主要特点是用户不必关心云平台底层的实现。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>云平台所服务的对象除个人外,大部分都是企业级用户</p>
+</blockquote>
+</li>
+</ul>
+
+        <h2 id="虚拟化技术"   >
+          <a href="#虚拟化技术" class="heading-link"><i class="fas fa-link"></i></a><a href="#虚拟化技术" class="headerlink" title="虚拟化技术"></a>虚拟化技术</h2>
+      <ul>
+<li><blockquote>
+<p>虚拟化技术是云计算系统的核心组成部分之一。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>虚拟化技术提供以下特点：</p>
+</blockquote>
+<ul>
+<li>资源分享</li>
+<li>资源定制</li>
+<li>细粒度资源管理</li>
+</ul>
+</li>
+<li><blockquote>
+<p>基于以上特点，虚拟化技术成为实现云计算资源池化和按需服务的基础。</p>
+</blockquote>
+</li>
+</ul>
+
+        <h2 id="并行编程技术（考点）"   >
+          <a href="#并行编程技术（考点）" class="heading-link"><i class="fas fa-link"></i></a><a href="#并行编程技术（考点）" class="headerlink" title="并行编程技术（考点）"></a>并行编程技术（考点）</h2>
+      <ul>
+<li><blockquote>
+<p>数据并行</p>
+</blockquote>
+<ul>
+<li>数据并行模型的编程级别比较高，编程相对简单，但它仅适用于数据并行问题</li>
+</ul>
+</li>
+<li><blockquote>
+<p>消息传递</p>
+</blockquote>
+<ul>
+<li>消息传递编程模型的编程级别相对较低，但消息传递编程模型可以有更广泛的应用范围</li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="数据管理技术"   >
+          <a href="#数据管理技术" class="heading-link"><i class="fas fa-link"></i></a><a href="#数据管理技术" class="headerlink" title="数据管理技术"></a>数据管理技术</h2>
+      <ul>
+<li><blockquote>
+<p>高效地管理大数据集</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><blockquote>
+<p>在规模巨大的数据中找到特定的数据</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>分布式数据库主要有：谷歌的<strong>BigTable（收费）</strong>和Hadoop的<strong>Hbase（开源）</strong></p>
+</blockquote>
+</li>
+</ul>
+
+        <h1 id="云计算与其他技术的区别与联系"   >
+          <a href="#云计算与其他技术的区别与联系" class="heading-link"><i class="fas fa-link"></i></a><a href="#云计算与其他技术的区别与联系" class="headerlink" title="云计算与其他技术的区别与联系"></a>云计算与其他技术的区别与联系</h1>
+      
+        <h2 id="云计算与大数据"   >
+          <a href="#云计算与大数据" class="heading-link"><i class="fas fa-link"></i></a><a href="#云计算与大数据" class="headerlink" title="云计算与大数据"></a>云计算与大数据</h2>
+      <ul>
+<li><blockquote>
+<p>大数据：主要是指数据集合。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>云计算解决人和物以及人和IT资源的问题。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>云计算是大数据的IT基础,而大数据是云计算的一个应用。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>人工智能其实就是大数据、云计算的应用场景。</p>
+</blockquote>
+</li>
+</ul>
+
+        <h2 id="区块链与云计算"   >
+          <a href="#区块链与云计算" class="heading-link"><i class="fas fa-link"></i></a><a href="#区块链与云计算" class="headerlink" title="区块链与云计算"></a>区块链与云计算</h2>
+      <ul>
+<li><blockquote>
+<p>区块链是用分布式数据库识别、传播和记载信息的智能化对等网络，也称为价值互联网。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>云计算的中心化与区块链的去中心化</p>
+</blockquote>
+</li>
+</ul>
+
+        <h2 id="云基础设施机制"   >
+          <a href="#云基础设施机制" class="heading-link"><i class="fas fa-link"></i></a><a href="#云基础设施机制" class="headerlink" title="云基础设施机制"></a>云基础设施机制</h2>
+      <ul>
+<li><blockquote>
+<p>虚拟网络边界</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>虚拟服务器</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>云存储设备</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>云使用监控</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>资源备份</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>就绪环境</p>
+</blockquote>
+</li>
+</ul>
+
+        <h2 id="网络边界"   >
+          <a href="#网络边界" class="heading-link"><i class="fas fa-link"></i></a><a href="#网络边界" class="headerlink" title="网络边界"></a>网络边界</h2>
+      <ul>
+<li><blockquote>
+<p>网络边界是指内部安全网络和外部非安全网络的分界线。</p>
+</blockquote>
+</li>
+</ul>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2023/03/18/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8%E7%AC%AC%E4%B8%89%E7%AB%A0/">数据库原理与应用（第三章）</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-03-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-03-20</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="3-1关系的性质和定义"   >
+          <a href="#3-1关系的性质和定义" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1关系的性质和定义" class="headerlink" title="3.1关系的性质和定义"></a>3.1关系的性质和定义</h1>
+      
+        <h2 id="关系数据模型的组成"   >
+          <a href="#关系数据模型的组成" class="heading-link"><i class="fas fa-link"></i></a><a href="#关系数据模型的组成" class="headerlink" title="关系数据模型的组成"></a>关系数据模型的组成</h2>
+      <ul>
+<li><p>关系数据结构</p>
+<ul>
+<li>二维表，由行列组成</li>
+</ul>
+</li>
+<li><p>关系操作集合</p>
+<ul>
+<li>选择、投影、并、交、差、笛卡尔积</li>
+</ul>
+</li>
+<li><p>关系完整性约束</p>
+<ul>
+<li>域完整性约束、实体完整性约束、参照完整性约束、用户定义完整性约束</li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="关系的性质和定义"   >
+          <a href="#关系的性质和定义" class="heading-link"><i class="fas fa-link"></i></a><a href="#关系的性质和定义" class="headerlink" title="关系的性质和定义"></a>关系的性质和定义</h2>
+      <ul>
+<li><p>关系</p>
+<ul>
+<li>规范化的二维表</li>
+</ul>
+</li>
+<li><p>关系模式</p>
+<ul>
+<li>是对关系的描述，包括关系名、所有属性名以及其模式的主键（主键要用下划线表示）</li>
+<li>例如：关系名(<u>属性1</u>、属性2、属性3) </li>
+<li>简记：R（U）或R（A1,A2,A3）</li>
+</ul>
+</li>
+<li><p>关系模式术语</p>
+<ul>
+<li><p>元数</p>
+<ul>
+<li>属性个数（即列数）</li>
+</ul>
+</li>
+<li><p>基数</p>
+<ul>
+<li>元组个数（即行数）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h1 id="3-2关系的完整性"   >
+          <a href="#3-2关系的完整性" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2关系的完整性" class="headerlink" title="3.2关系的完整性"></a>3.2关系的完整性</h1>
+      
+        <h2 id="关系完整性"   >
+          <a href="#关系完整性" class="heading-link"><i class="fas fa-link"></i></a><a href="#关系完整性" class="headerlink" title="关系完整性"></a>关系完整性</h2>
+      <ul>
+<li>指存储数据库的数据一致性、准确性、有效性。</li>
+</ul>
+
+        <h2 id="关系完整性约束（指对关系的约束条件，分为四种）"   >
+          <a href="#关系完整性约束（指对关系的约束条件，分为四种）" class="heading-link"><i class="fas fa-link"></i></a><a href="#关系完整性约束（指对关系的约束条件，分为四种）" class="headerlink" title="关系完整性约束（指对关系的约束条件，分为四种）"></a>关系完整性约束（指对关系的约束条件，分为四种）</h2>
+      <ul>
+<li>域完整性约束<ul>
+<li>关系中属性A的值应该就是规定取值范围内的值， 并由语<br>义决定其能否取空值（NULL）。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>实体完整性约束</p>
+<ul>
+<li>主键的属性值不能取空值。</li>
+</ul>
+</li>
+<li><p>参照完整性约束</p>
+<ul>
+<li>关系的外键属性取值必须是另一个关系主键属性有效值或者空值。</li>
+</ul>
+</li>
+<li><p>用户定义的完整性约束</p>
+<ul>
+<li>用户针对具体数据要求设置完整性的约束</li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="参照完整性规则："   >
+          <a href="#参照完整性规则：" class="heading-link"><i class="fas fa-link"></i></a><a href="#参照完整性规则：" class="headerlink" title="参照完整性规则："></a>参照完整性规则：</h2>
+      <ul>
+<li><p>主表—含主键的表称为主表（被参照表）</p>
+</li>
+<li><p>从表—含外键的表称为从表。（参照表）</p>
+</li>
+</ul>
+
+        <h3 id="详细规则"   >
+          <a href="#详细规则" class="heading-link"><i class="fas fa-link"></i></a><a href="#详细规则" class="headerlink" title="详细规则"></a>详细规则</h3>
+        <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  (1)外键和相应的主键可以不同名，只要定义在相同域上即可。</span><br><span class="line"></span><br><span class="line">(2)外键的取值可以为空，可以是重复，但必须是其主表中的 </span><br><span class="line">取值之一。外键的取值是否为空值，应视具体情况而定，如果外键是相应主键的属性（即主属性），则不允许外键的值为空。</span><br><span class="line"></span><br><span class="line">(3)如果主表中的键值更改了，从表中该键值的所有引用要进行</span><br><span class="line">一致更改。 </span><br><span class="line"></span><br><span class="line">(4)删除主表中记录，先删除从表中与该记录匹配的相关记录。</span><br></pre></td></tr></table></div></figure>
+
+
+
+        <h1 id="3-3关系运算"   >
+          <a href="#3-3关系运算" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3关系运算" class="headerlink" title="3.3关系运算"></a>3.3关系运算</h1>
+      <p>主要掌握内容</p>
+<ul>
+<li><p>集合操作：并、差、交、笛卡儿积</p>
+</li>
+<li><p>关系操作：投影（列操作）、选择（行操作）、连接</p>
+</li>
+<li><p>内连接（重点）与自然连接（常用）</p>
+</li>
+</ul>
+
+        <h1 id="3-4关系规范化"   >
+          <a href="#3-4关系规范化" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-4关系规范化" class="headerlink" title="3.4关系规范化"></a>3.4关系规范化</h1>
+      <ul>
+<li>3.4.1 函数依赖</li>
+<li>3.4.2关系规范化的目的</li>
+<li>3.4.3关系规范化的过程</li>
+</ul>
+
+        <h2 id="函数依赖"   >
+          <a href="#函数依赖" class="heading-link"><i class="fas fa-link"></i></a><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h2>
+      <ul>
+<li>数据依赖共三种<ul>
+<li>函数依赖（重点）</li>
+<li>多值依赖</li>
+<li>连接依赖</li>
+</ul>
+</li>
+</ul>
+<hr>
+
+        <h3 id="理论：在关系模式R（U）中，X和Y是集合U的子集，对于X集合中有的一组属性值，Y集合也有，与之对应，那么就称X函数确定Y（Y函数依赖于X）记作X→Y。X是决定项，Y是依赖项。"   >
+          <a href="#理论：在关系模式R（U）中，X和Y是集合U的子集，对于X集合中有的一组属性值，Y集合也有，与之对应，那么就称X函数确定Y（Y函数依赖于X）记作X→Y。X是决定项，Y是依赖项。" class="heading-link"><i class="fas fa-link"></i></a><a href="#理论：在关系模式R（U）中，X和Y是集合U的子集，对于X集合中有的一组属性值，Y集合也有，与之对应，那么就称X函数确定Y（Y函数依赖于X）记作X→Y。X是决定项，Y是依赖项。" class="headerlink" title="理论：在关系模式R（U）中，X和Y是集合U的子集，对于X集合中有的一组属性值，Y集合也有，与之对应，那么就称X函数确定Y（Y函数依赖于X）记作X→Y。X是决定项，Y是依赖项。"></a>理论：在关系模式R（U）中，X和Y是集合U的子集，对于X集合中有的一组属性值，Y集合也有，与之对应，那么就称X函数确定Y（Y函数依赖于X）记作X→Y。X是决定项，Y是依赖项。</h3>
+      <hr>
+
+        <h3 id="举例："   >
+          <a href="#举例：" class="heading-link"><i class="fas fa-link"></i></a><a href="#举例：" class="headerlink" title="举例："></a>举例：</h3>
+      <ul>
+<li>现有关系模型如下：<strong>学生（<u>学号</u>，姓名，专业，性别，出生日期，学分）</strong><ul>
+<li>其中学号为主键</li>
+</ul>
+</li>
+<li>学号→姓名 ；学号→专业名；学号→性别 ；学号→出生日期；学号→总学分</li>
+</ul>
+<hr>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2023/03/16/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB%E7%AC%AC%E4%BA%8C%E7%AB%A0/">模式识别（第二章）</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-03-16</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-03-16</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="贝叶斯决策"   >
+          <a href="#贝叶斯决策" class="heading-link"><i class="fas fa-link"></i></a><a href="#贝叶斯决策" class="headerlink" title="贝叶斯决策"></a>贝叶斯决策</h1>
+      
+        <h2 id="基本概念"   >
+          <a href="#基本概念" class="heading-link"><i class="fas fa-link"></i></a><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2>
+      <ul>
+<li>1.先验概率<ul>
+<li>预先已知或可以估计的某种类型的概率<ul>
+<li>某地癌症发生率为5%<ul>
+<li><strong>正常类：P=（ω 1）=99.5%</strong></li>
+<li><strong>异常类：P=（ω 2）=0.5%</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2.类条件概率<ul>
+<li>某一类x出现的概率，例如这个x可以是阳性或阴性。<ul>
+<li>正常类出现的概率为1%，异常类出现的概率为95%<ul>
+<li><strong>正常类：P=（x|ω1）=1%</strong></li>
+<li><strong>异常类：P=（x|ω2）=95%</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3.后验概率<ul>
+<li>x条件下位于某种类型的概率<ul>
+<li>例如出现数据x且正常类的概率是67.7%，那么异常类的概率就是32.3%。<ul>
+<li><strong>正常类：P=（ω1|x）=67.7%</strong></li>
+<li><strong>异常类：P=（ω2|x）=32.3%</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="最小错误率"   >
+          <a href="#最小错误率" class="heading-link"><i class="fas fa-link"></i></a><a href="#最小错误率" class="headerlink" title="最小错误率"></a>最小错误率</h2>
+      <ul>
+<li>哪一类的概率大就分到哪一类（判断x属于哪一类的概率最大）</li>
+</ul>
+
+        <h2 id="最小风险条件"   >
+          <a href="#最小风险条件" class="heading-link"><i class="fas fa-link"></i></a><a href="#最小风险条件" class="headerlink" title="最小风险条件"></a>最小风险条件</h2>
+      <ul>
+<li>哪一类风险小就选择哪一类</li>
+</ul>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2023/03/16/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB%E7%AC%AC%E4%B8%80%E7%AB%A0/">模式识别（第一章）</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-03-16</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-03-16</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="模式和模式类"   >
+          <a href="#模式和模式类" class="heading-link"><i class="fas fa-link"></i></a><a href="#模式和模式类" class="headerlink" title="模式和模式类"></a>模式和模式类</h2>
+      <ul>
+<li>模式<ul>
+<li>任何可观测且需要进行分类的对象</li>
+</ul>
+</li>
+<li>模式类<ul>
+<li>模式所属的类别或同一类中模式的总体</li>
+</ul>
+</li>
+<li>特征<ul>
+<li>多个方面的变量称作特征</li>
+</ul>
+</li>
+<li>样本<ul>
+<li>事物特点或性状</li>
+</ul>
+</li>
+<li>维度<ul>
+<li>与特征一样，但其大小不同，一般是三个维度</li>
+</ul>
+</li>
+</ul>
+
+        <h1 id="模式识别系统"   >
+          <a href="#模式识别系统" class="heading-link"><i class="fas fa-link"></i></a><a href="#模式识别系统" class="headerlink" title="模式识别系统"></a>模式识别系统</h1>
+      
+        <h2 id="有监督、无监督、半监督学习"   >
+          <a href="#有监督、无监督、半监督学习" class="heading-link"><i class="fas fa-link"></i></a><a href="#有监督、无监督、半监督学习" class="headerlink" title="有监督、无监督、半监督学习"></a>有监督、无监督、半监督学习</h2>
+      <ul>
+<li>有监督学习<ul>
+<li>已知要划分的类别，对未标记样本进行分类决策</li>
+</ul>
+</li>
+<li>无监督学习<ul>
+<li>不知道要划分的是什么类别，没有标记样本。</li>
+</ul>
+</li>
+<li>半监督学习<ul>
+<li>一部分有划分类别，一部分没有。</li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="特征提取和选择"   >
+          <a href="#特征提取和选择" class="heading-link"><i class="fas fa-link"></i></a><a href="#特征提取和选择" class="headerlink" title="特征提取和选择"></a>特征提取和选择</h2>
+      <ul>
+<li>提取<ul>
+<li>对原始特征进行特征变换，降低特征维度</li>
+</ul>
+</li>
+<li>选择<ul>
+<li>从已有特征中挑选对分类最有利的特征。实质也是降维</li>
+</ul>
+</li>
+</ul>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2023/03/15/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8%E7%AC%AC%E4%BA%8C%E7%AB%A0/">数据库原理与应用（第二章）</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-03-15</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-03-16</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="信息的三种世界"   >
+          <a href="#信息的三种世界" class="heading-link"><i class="fas fa-link"></i></a><a href="#信息的三种世界" class="headerlink" title="信息的三种世界"></a>信息的三种世界</h2>
+      <ol>
+<li>现实世界</li>
+<li>信息世界</li>
+<li>数据世界</li>
+</ol>
+
+        <h2 id="概念模型"   >
+          <a href="#概念模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#概念模型" class="headerlink" title="概念模型"></a>概念模型</h2>
+      <ol>
+<li><strong>实体</strong></li>
+</ol>
+<ul>
+<li>客观存在并可以相互区分的事物。<br>如一个学生、一个班级等。</li>
+</ul>
+<ol start="2">
+<li><strong>属性</strong></li>
+</ol>
+<ul>
+<li>实体所具有的某些特性</li>
+</ul>
+<ol start="3">
+<li><strong>码</strong></li>
+</ol>
+<ul>
+<li>一个属性或属性集能够唯一标识一个实体，就称其位实体的码<ul>
+<li>候选码：实体的属性集可能有多个码，每一个码都<br>称为候选码。</li>
+<li>主码：一个属性集中只能确定其中一个候选码作为唯一标识，该候选码称为主码。</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li><strong>实体性</strong></li>
+</ol>
+<ul>
+<li>用实体名及其属性名集合来抽象<br>和刻画同类实体，称为实体型</li>
+</ul>
+<ol start="5">
+<li><strong>实体集</strong></li>
+</ol>
+<ul>
+<li>同型实体的集合称为实体集</li>
+</ul>
+<ol start="6">
+<li><strong>联系</strong></li>
+</ol>
+<ul>
+<li>即各实体型之间是有联系的，并且分为三种联系。<ul>
+<li>一对一联系</li>
+<li>一对多联系</li>
+<li>多对多联系</li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="E—R模型"   >
+          <a href="#E—R模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#E—R模型" class="headerlink" title="E—R模型"></a>E—R模型</h2>
+      <ul>
+<li>主要构成：<ul>
+<li>实体</li>
+<li>联系</li>
+<li>属性</li>
+</ul>
+</li>
+<li>E-R图表示方式：<ul>
+<li><strong>矩形</strong>表示：实体</li>
+<li><strong>椭圆形</strong>表示：实体的属性</li>
+<li><strong>菱形</strong>表示：实体间的联系</li>
+<li><strong>主码</strong>：需要加下划线____</li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="数据模型"   >
+          <a href="#数据模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h2>
+      <ul>
+<li>什么是数据模型？<ul>
+<li>数据模型提供表示和组织数据的方法。</li>
+</ul>
+</li>
+<li>数据模型构成的三要素？<ul>
+<li>数据结构<ul>
+<li>描述数据库静态特征。</li>
+<li>按照数据结构的类型来命名数据模型：层次模型、网状<br>模型和关系模型。</li>
+</ul>
+</li>
+<li>数据操作<ul>
+<li>描述数据库动态特征</li>
+</ul>
+</li>
+<li>数据的完整性约束<ul>
+<li>是关于数据状态和状态变化的一组完整性约束规则的集合</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="关系模型"   >
+          <a href="#关系模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h2>
+      <ul>
+<li>什么是关系模型？<ul>
+<li>用二维表格结构表示实体之间的联系，称之为关系模型</li>
+</ul>
+</li>
+<li>关系模型的重要概念：<ul>
+<li>1.关系<ul>
+<li>规范化的二维表</li>
+</ul>
+</li>
+<li>2.元组<ul>
+<li>除表头外的每一行是一个元组</li>
+</ul>
+</li>
+<li>3.属性<ul>
+<li>二维表的列称为属性，每一列有一个属性名，属性值是属性的具体值。</li>
+</ul>
+</li>
+<li>4.域<ul>
+<li>属性的取值范围</li>
+</ul>
+</li>
+<li>5.关系模式<ul>
+<li>表名与表头的联系</li>
+</ul>
+</li>
+<li>6.关键字或码<ul>
+<li>唯一标识元组的属性</li>
+</ul>
+</li>
+<li>7.候选关键字或候选码<ul>
+<li>关系中存在多个属性，都能用来唯一标识关系中的元组。候选码可以有多个</li>
+</ul>
+</li>
+<li>8.主键或主码<ul>
+<li>被指定作为关键字的候选关键字</li>
+</ul>
+</li>
+<li>9.主属性和非主属性<ul>
+<li>包含在任何候选码中的各个属性称为主属性；不包含在任一候选码中的属性称为非主属性。</li>
+</ul>
+</li>
+<li>10.外键或外码<ul>
+<li>两个表有关联的公共属性</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2023/03/13/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8/">数据库原理与应用（第一章）</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-03-13</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-03-15</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="主要内容"   >
+          <a href="#主要内容" class="heading-link"><i class="fas fa-link"></i></a><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h2>
+      <ol>
+<li><p><strong>数据库技术的发展史：</strong>数据处理技术，三个发展阶段</p>
+</li>
+<li><p><strong>数据库系统</strong>：基本概念、组成和功能——重点</p>
+</li>
+<li><p><strong>数据库的体系结构：</strong> 三级模式结构，两级映像——重点</p>
+</li>
+</ol>
+
+        <h2 id="数据库技术发展史"   >
+          <a href="#数据库技术发展史" class="heading-link"><i class="fas fa-link"></i></a><a href="#数据库技术发展史" class="headerlink" title="数据库技术发展史"></a>数据库技术发展史</h2>
+      <ul>
+<li><strong>计算机的三个主要应用领域</strong></li>
+</ul>
+<ol>
+<li>科学计算</li>
+<li>数据处理</li>
+<li>智能控制</li>
+</ol>
+
+        <h2 id="数据处理技术"   >
+          <a href="#数据处理技术" class="heading-link"><i class="fas fa-link"></i></a><a href="#数据处理技术" class="headerlink" title="数据处理技术"></a>数据处理技术</h2>
+      <ol>
+<li>数据</li>
+</ol>
+<ul>
+<li>数据是描述事物的符合标记，是各类信息的具体表现形式。</li>
+</ul>
+<ol start="2">
+<li>数据处理与数据管理</li>
+</ol>
+<ul>
+<li>数据处理的目的是从大量数据中提取出有效的信息资源</li>
+<li>数据管理是数据处理的核心，指数据的收集、整理、组织、存储和查询操作。</li>
+</ul>
+
+        <h2 id="数据库技术的三个发展阶段"   >
+          <a href="#数据库技术的三个发展阶段" class="heading-link"><i class="fas fa-link"></i></a><a href="#数据库技术的三个发展阶段" class="headerlink" title="数据库技术的三个发展阶段"></a>数据库技术的三个发展阶段</h2>
+      <ol>
+<li><strong>人工管理阶段</strong></li>
+<li><strong>文件系统阶段</strong></li>
+</ol>
+<p>文件系统特点：</p>
+<p>(1)数据可以长期保存</p>
+<p>(2)由文件系统管理数据</p>
+<p>(3)处理方式上不仅有文件批处理，且能够联机实时处理</p>
+<p>(4)数据具有一定的独立性</p>
+<ol start="3">
+<li><strong>数据库系统阶段</strong></li>
+</ol>
+<p>数据库系统的特点如下（优点）:</p>
+<p>(1)数据结构化</p>
+<p>(2)较高的数据共享性</p>
+<p>(3）较高的数据独立性</p>
+<p>(4)数据由DBMS统一管理和控制</p>
+
+        <h2 id="数据库系统的组成"   >
+          <a href="#数据库系统的组成" class="heading-link"><i class="fas fa-link"></i></a><a href="#数据库系统的组成" class="headerlink" title="数据库系统的组成"></a>数据库系统的组成</h2>
+      <ul>
+<li>数据库系统是指在计算机系统中引入数据库后的系统，一般由<em><strong>数据库、数据库管理系统、数据库开发工具、数据库应用系统和数据库用户</strong></em>构成。</li>
+</ul>
+
+        <h2 id="数据库的体系结构"   >
+          <a href="#数据库的体系结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#数据库的体系结构" class="headerlink" title="数据库的体系结构"></a>数据库的体系结构</h2>
+      <ul>
+<li><p>三级模式结构：外模式、模式和内模式</p>
+<ul>
+<li>外模式：对数据库的查询</li>
+<li>模式：DBMS整体</li>
+<li>内模式：将文件存储到硬盘</li>
+</ul>
+</li>
+<li><p>数据独立性</p>
+<ul>
+<li>是指应用程序和数据库的数据结构之间相互独立，不受影响，包括物理数据独立性和逻辑数据独立性。</li>
+</ul>
+</li>
+<li><p>物理数据独立性和逻辑数据独立性</p>
+<ul>
+<li>物理数据独立性：存储模式改变，模式不变（修改数据库的路径不影响应用的数据）</li>
+<li>逻辑数据独立性：模式改变，外模式和应用程序不变
+        <h2 id="常见的数据库系统结构"   >
+          <a href="#常见的数据库系统结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#常见的数据库系统结构" class="headerlink" title="常见的数据库系统结构"></a>常见的数据库系统结构</h2>
+      </li>
+</ul>
+</li>
+<li><p>单用户数据库系统</p>
+<ul>
+<li>比如一台PC</li>
+</ul>
+</li>
+<li><p>主从式结构的数据库系统</p>
+<ul>
+<li>一台主机带多个终端的多用户结构</li>
+</ul>
+</li>
+</ul>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2023/03/13/%E4%BA%91%E8%AE%A1%E7%AE%97/">云计算导论（持续更新）</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-03-13</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-03-13</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="1-4-1-云计算的公共特征"   >
+          <a href="#1-4-1-云计算的公共特征" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-4-1-云计算的公共特征" class="headerlink" title="1.4.1 云计算的公共特征"></a>1.4.1 云计算的公共特征</h2>
+      <ol>
+<li>弹性伸缩</li>
+<li>快速部署</li>
+<li>资源抽象</li>
+<li>按用量收费</li>
+<li>带宽访问</li>
+</ol>
+<p><strong>其中最重要的特征是：资源抽象</strong></p>
+
+        <h2 id="1-4-2-云计算的分类"   >
+          <a href="#1-4-2-云计算的分类" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-4-2-云计算的分类" class="headerlink" title="1.4.2 云计算的分类"></a>1.4.2 云计算的分类</h2>
+      <ol>
+<li>公共云</li>
+<li>私有云（或称专属云）</li>
+<li>社区云</li>
+<li>混合云</li>
+<li>行业云</li>
+<li>其他云类型</li>
+</ol>
+<p> 主要记住前三个即可</p>
+
+        <h2 id="云计算的分类"   >
+          <a href="#云计算的分类" class="heading-link"><i class="fas fa-link"></i></a><a href="#云计算的分类" class="headerlink" title="云计算的分类"></a>云计算的分类</h2>
+      <p><strong>针对云计算的服务层次和服务类型进行分类</strong></p>
+<ol>
+<li>基础设施即服务（Infrastructure as a Service，laaS)</li>
+<li>平台即服务（Platform as a Service，PaaS)</li>
+<li>软件即服务(Software as a Service，SaaS)</li>
+</ol>
+<p><strong>并且按照交付模式和部署方式分类</strong></p>
+
+        <h2 id="2-1-1-云计算的基本概念"   >
+          <a href="#2-1-1-云计算的基本概念" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-1-云计算的基本概念" class="headerlink" title="2.1.1 云计算的基本概念"></a>2.1.1 云计算的基本概念</h2>
+      <ol>
+<li>集中式计算</li>
+</ol>
+<ul>
+<li>集中式计算完全依赖于一台大型的中心计算机的处理能力,这台中心计算机称为主机(Host或mainframe），与中心计算机相连的终端设备具有各不相同非常低的计算能力。实际上大多数终端完全不具有处理能力，仅作为输入输出设备使用。</li>
+</ul>
+<ol start="2">
+<li>分布式计算</li>
+</ol>
+<ul>
+<li>与集中式计算相反，分布式计算中，多个通过网络互联的计算机都具有一定的计算能力，它们之间互相传递数据，实现信息共享，协作共同完成一个处理任务。</li>
+</ul>
+
+        <h2 id="分布式计算的原理"   >
+          <a href="#分布式计算的原理" class="heading-link"><i class="fas fa-link"></i></a><a href="#分布式计算的原理" class="headerlink" title="分布式计算的原理"></a>分布式计算的原理</h2>
+      <ul>
+<li>的计算任务。而分布式计算的原理和并行计算类似，就是将一个复杂庞大的计算任务适当划分为一个个小任务，任务并行执行，只不过分布式计算会将这些任务分配到不同的计算节点上，每个计算节点只需要完成自己的计算任务即可，可以有效分担海量的计算任务。而每个计算节点也可以并行处理自身的任务，更加充分利用机器的CPU资源。最后再将每个节点的计算结果汇总,得到最后的计算结果。</li>
+<li>云计算是分布式计算技术的一种，也是分布式计算这种科学概念的商业实现。分布式计算的优点就是发挥“集体的力量”</li>
+</ul>
+
+        <h2 id="分布式计算应用"   >
+          <a href="#分布式计算应用" class="heading-link"><i class="fas fa-link"></i></a><a href="#分布式计算应用" class="headerlink" title="分布式计算应用"></a>分布式计算应用</h2>
+      <ol>
+<li><p><strong>P2P</strong>用户下载的文件不是集中存放到某个中心，而是分别存储在网络中不同节点，当用户有下载需求时，可以从网络上的节点中获取相应资源碎片，并形成下载文件。比如用迅雷下载文件的方式就是采用P2P方式。</p>
+</li>
+<li><p><strong>CDN</strong>是构建在数据网络上的一种分布式的内容分发网。CDN采用流媒体服务器集群技术，利用全局负载均衡技术将用户的访问指向离用户最近的工作正常的流媒体服务器上，由流媒体服务器直接响应用户的请求。能克服单机系统输出带宽及并发能力不足的缺点，可极大提升系统支持的并发流数目，减少或避免单点失效带来的不良影响，将视频网站中的内容分布存储在就近的服务器上，从而形成分布式网络。</p>
+</li>
+<li><p><strong>区块链</strong>将账目信息记录在不同的节点，当交易方式时，更新网路上所有账目副本;应用架构中的分布式计算架构多应用于微服务。</p>
+</li>
+</ol>
+
+        <h2 id="云计算的组成部分"   >
+          <a href="#云计算的组成部分" class="heading-link"><i class="fas fa-link"></i></a><a href="#云计算的组成部分" class="headerlink" title="云计算的组成部分"></a>云计算的组成部分</h2>
+      <ol>
+<li>基础设施（Infrastructure)</li>
+<li>存储（Storage）</li>
+<li>平台(Platform)</li>
+<li>应用（Application)</li>
+<li>服务（Services)</li>
+<li>客户端（Clients）</li>
+</ol>
+
+        <h2 id="云计算的关键技术"   >
+          <a href="#云计算的关键技术" class="heading-link"><i class="fas fa-link"></i></a><a href="#云计算的关键技术" class="headerlink" title="云计算的关键技术"></a>云计算的关键技术</h2>
+      <ol>
+<li>分布式海量数据存储</li>
+<li>虚拟化技术</li>
+<li>云管理平台技术</li>
+<li>并行编程技术</li>
+<li>数据管理技术</li>
+</ol>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/11/06/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C%E4%BA%94/">C语言实验五</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-06</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-20</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="函数及其应用"   >
+          <a href="#函数及其应用" class="heading-link"><i class="fas fa-link"></i></a><a href="#函数及其应用" class="headerlink" title="函数及其应用"></a>函数及其应用</h1>
+      
+        <h2 id="实验内容："   >
+          <a href="#实验内容：" class="heading-link"><i class="fas fa-link"></i></a><a href="#实验内容：" class="headerlink" title="实验内容："></a>实验内容：</h2>
+      <ul>
+<li>1．输入两个正整数，分别调用函数求其最大公约数与最小公倍数。要求采用辗转相除法求最大公约数，而计算最小公倍数的方法则为两数相乘再除以其最大公约数。</li>
+<li>2．编程计算S=1!+2!+3!+…+n!。要求分别用递归函数计算n!与S。</li>
+<li>3．输入一个字符串，并按相反的顺序将其输出（如：输入“abc”，输出“cba”）。要求编一函数以实现字符串的逆序转换。
+        <h2 id="实验代码：最小公倍数与最大公约数"   >
+          <a href="#实验代码：最小公倍数与最大公约数" class="heading-link"><i class="fas fa-link"></i></a><a href="#实验代码：最小公倍数与最大公约数" class="headerlink" title="实验代码：最小公倍数与最大公约数"></a>实验代码：最小公倍数与最大公约数</h2>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int gcd(int a, int b);</span><br><span class="line">	int lcm(int a, int b);</span><br><span class="line">	int x, y;</span><br><span class="line">	printf(&quot;输入两个数：&quot;);</span><br><span class="line">	scanf(&quot;%d %d&quot;, &amp;x, &amp;y);</span><br><span class="line">	printf(&quot;最大公约数是：%d\n&quot;, gcd(x, y));</span><br><span class="line">	printf(&quot;最小公倍数是：%d\n&quot;, lcm(x, y));</span><br><span class="line">	return 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int gcd(int a, int b)</span><br><span class="line">&#123;</span><br><span class="line">	int c = 0;</span><br><span class="line">	while (c = a % b)</span><br><span class="line">	&#123;</span><br><span class="line">		a = b;</span><br><span class="line">		b = c;</span><br><span class="line">	&#125;</span><br><span class="line">	return b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int lcm(int a, int b)</span><br><span class="line">&#123;</span><br><span class="line">	int temp = 0;</span><br><span class="line">	temp = a * b / gcd(a, b);</span><br><span class="line">	return temp;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="分析说明："   >
+          <a href="#分析说明：" class="heading-link"><i class="fas fa-link"></i></a><a href="#分析说明：" class="headerlink" title="分析说明："></a>分析说明：</h2>
+      定义一个函数最大公约数：gcd，将a，b两个数通过辗转相除发得到最大公约数，最后将最大公约数返回给b。定义一个函数最小公倍数lcm：最小公倍数的算法的两个数相乘，在除以他们的最大公约数。Temp用来存放最小公倍数，temp=a*b/gcb（a,b）两个数相乘再调用前面写的gcd最大公约数。
+        <h2 id="实验代码：（2）递归函数计算n！与乘阶之和S"   >
+          <a href="#实验代码：（2）递归函数计算n！与乘阶之和S" class="heading-link"><i class="fas fa-link"></i></a><a href="#实验代码：（2）递归函数计算n！与乘阶之和S" class="headerlink" title="实验代码：（2）递归函数计算n！与乘阶之和S"></a>实验代码：（2）递归函数计算n！与乘阶之和S</h2>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt; </span><br><span class="line">int fun1(int n)</span><br><span class="line">&#123;</span><br><span class="line">	if (n == 1) return 1;//如果n=1则直接返回1 </span><br><span class="line">	return n * fun1(n - 1);//否则返回n*fun(n-1),以此计算n的阶乘。递归体 </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n;</span><br><span class="line">	printf(&quot;输入要计算乘阶的数：&quot;);</span><br><span class="line">	scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">	int i;</span><br><span class="line">	int sum = 0;</span><br><span class="line">	for (i = 1; i &lt; n; i++) &#123;</span><br><span class="line">		sum += fun1(i);//循环调用，用sum来累计S </span><br><span class="line">		printf(&quot;%d!=%d\n&quot;, i, fun1(i));//把每次阶乘的结果打印出来 </span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;1!+2!+3!+....+n!=%d\n&quot;, sum);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="分析说明：-1"   >
+          <a href="#分析说明：-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#分析说明：-1" class="headerlink" title="分析说明："></a>分析说明：</h2>
+      定义一个fun1函数，用于计算阶乘n！，如果输入的数为1就返回1，否则就输出n*(n-1)。然后在主函数调用fun1函数，并用for循环对每次阶乘的值进行累加，存放在sum里。
+        <h2 id="实验代码：（3）字符串的逆序转换"   >
+          <a href="#实验代码：（3）字符串的逆序转换" class="heading-link"><i class="fas fa-link"></i></a><a href="#实验代码：（3）字符串的逆序转换" class="headerlink" title="实验代码：（3）字符串的逆序转换"></a>实验代码：（3）字符串的逆序转换</h2>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int my_strlen(char* arr) &#123;</span><br><span class="line">	if (*arr != &#x27;\0&#x27;) &#123;</span><br><span class="line">		return 1 + my_strlen(arr + 1);</span><br><span class="line">	&#125;</span><br><span class="line">	else return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void reverse_string(char* arr) &#123;</span><br><span class="line">	int tmp = arr[0];//把第一个元素放到tmp中，</span><br><span class="line">	int len = my_strlen(arr);//求字符串长度</span><br><span class="line">	arr[0] = arr[len - 1];//把最末的元素放到第一个arr【0】</span><br><span class="line">	arr[len - 1] = &#x27;\0&#x27;; //给最末的元素赋&#x27;\0&#x27;</span><br><span class="line">	if (my_strlen(arr + 1) &gt;= 2)//递归到最后可能还剩1个或0个元素这个</span><br><span class="line">		//字符串是否为是1或0；是1或0就不用交换了</span><br><span class="line">		reverse_string(arr + 1);</span><br><span class="line">	arr[len - 1] = tmp;//把tmp中第一个元素的值给最后1个元素</span><br><span class="line">&#125;</span><br><span class="line">int main() &#123;</span><br><span class="line"></span><br><span class="line">	char arr[10] = &quot;\0&quot;;</span><br><span class="line">	printf(&quot;输入字符串：&quot;);</span><br><span class="line">	scanf(&quot;%s&quot;, &amp;arr);</span><br><span class="line">	reverse_string(arr);</span><br><span class="line">	printf(&quot;逆序转换后的字符串：%s&quot;, arr);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h2 id="分析说明：-2"   >
+          <a href="#分析说明：-2" class="heading-link"><i class="fas fa-link"></i></a><a href="#分析说明：-2" class="headerlink" title="分析说明："></a>分析说明：</h2>
+      定义一个函数my_strlen用于求字符串长度。定义一个函数reverse_string用于字符串的逆序转换。Tmp用来存放字符串的第一个元素，然后把字符串最末的元素赋给a[0]，并把字符串最末尾的元素赋值’\0’，然后通过递归的方式得到逆序转换后的字符串。</li>
+</ul>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/assets/avatar.png" alt="avatar"></div></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">6</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">9</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>whisme</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
