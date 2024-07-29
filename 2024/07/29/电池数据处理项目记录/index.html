@@ -1,0 +1,312 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="电池数据分析                           一、项目结构        batt_recode 0_OrigData zip_file   batt_result a_prepare_data e_data_reduction f_repetitive_data_clean   c_data_2_process a_data_sort">
+<meta property="og:type" content="article">
+<meta property="og:title" content="电池数据处理项目记录">
+<meta property="og:url" content="https://whisme.github.io/2024/07/29/%E7%94%B5%E6%B1%A0%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="小王同学">
+<meta property="og:description" content="电池数据分析                           一、项目结构        batt_recode 0_OrigData zip_file   batt_result a_prepare_data e_data_reduction f_repetitive_data_clean   c_data_2_process a_data_sort">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-07-29T07:28:33.000Z">
+<meta property="article:modified_time" content="2024-07-29T08:25:23.411Z">
+<meta property="article:author" content="whisme">
+<meta property="article:tag" content="电池数据处理">
+<meta property="article:tag" content="工作">
+<meta name="twitter:card" content="summary"><title>电池数据处理项目记录 | 小王同学</title><link ref="canonical" href="https://whisme.github.io/2024/07/29/%E7%94%B5%E6%B1%A0%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">小王同学</div><div class="header-banner-info__subtitle">any way the wind blows</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">电池数据处理项目记录</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-07-29</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-07-29</span></span></div></header><div class="post-body">
+        <h1 id="电池数据分析"   >
+          <a href="#电池数据分析" class="heading-link"><i class="fas fa-link"></i></a><a href="#电池数据分析" class="headerlink" title="电池数据分析"></a>电池数据分析</h1>
+      
+        <h2 id="一、项目结构"   >
+          <a href="#一、项目结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、项目结构" class="headerlink" title="一、项目结构"></a>一、项目结构</h2>
+      <ul>
+<li>batt_recode<ul>
+<li>0_OrigData<ul>
+<li>zip_file</li>
+</ul>
+</li>
+<li>batt_result<ul>
+<li>a_prepare_data<ul>
+<li>e_data_reduction</li>
+<li>f_repetitive_data_clean</li>
+</ul>
+</li>
+<li>c_data_2_process<ul>
+<li>a_data_sort</li>
+<li>b_idle_data_separation</li>
+<li>c_op_data_time_seg</li>
+<li>d_chrg_rls_seperation</li>
+<li>e_chrg_data_extract</li>
+<li>f_rls_data_extract</li>
+</ul>
+</li>
+<li>d_ data_2_chrg_capacity<ul>
+<li>a_chrg_curr_diff_clean</li>
+</ul>
+</li>
+<li>final_result_cdc_capacity_analysis</li>
+</ul>
+</li>
+<li>src<ul>
+<li>a_MainProgram</li>
+<li>b_Plot</li>
+<li>c_Functions</li>
+<li>app.py</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="二、结构说明"   >
+          <a href="#二、结构说明" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、结构说明" class="headerlink" title="二、结构说明"></a>二、结构说明</h2>
+      
+        <h3 id="2-1-根目录batt-redcode下共三个package："   >
+          <a href="#2-1-根目录batt-redcode下共三个package：" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-根目录batt-redcode下共三个package：" class="headerlink" title="2.1 根目录batt_redcode下共三个package："></a>2.1 根目录<strong>batt_redcode</strong>下共三个package：</h3>
+      <ul>
+<li>0_OrigData</li>
+<li>batt_result</li>
+<li>src</li>
+</ul>
+
+        <h3 id="2-2-0-OrigData包"   >
+          <a href="#2-2-0-OrigData包" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-0-OrigData包" class="headerlink" title="2.2 0_OrigData包"></a>2.2 0_OrigData包</h3>
+      <ul>
+<li><p><strong>0_OrigData</strong>的<strong>zip_file</strong>目录下存放原始zip_csv文件</p>
+</li>
+<li><p><strong>0_OrigData</strong>根目录存放解压后的csv文件</p>
+</li>
+</ul>
+
+        <h3 id="2-3-batt-result包"   >
+          <a href="#2-3-batt-result包" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-batt-result包" class="headerlink" title="2.3 batt_result包"></a>2.3 batt_result包</h3>
+      <p>batt_result目录下的文件夹均为存储数据结果（保存到data文件夹中，每个data文件夹里有每组电池的数据batt_1至batt_10）</p>
+<ul>
+<li><strong>a_prepare_data</strong> 目录下有两个处理步骤<ul>
+<li><ol>
+<li>data_reduction</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>repetitive_data_clean</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>c_data_2_process</strong>目录下有6个处理步骤<ul>
+<li><ol>
+<li>data_2_sort</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>idle_data_separation</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>op_data_time_seg</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>chrg_rls_seperation</li>
+</ol>
+</li>
+<li><ol start="5">
+<li>chrg_data_extract</li>
+</ol>
+</li>
+<li><ol start="6">
+<li>rls_data_extract</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>d_ data_2_chrg_capacity</strong> 目录下有一个处理步骤<ul>
+<li><ol>
+<li>chrg_curr_diff_clean</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>final_result_cdc_capacity_analysis</strong> 目录下有一个处理步骤<ul>
+<li><ol>
+<li>cdc_capacity_analysis</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="2-4-src包"   >
+          <a href="#2-4-src包" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-4-src包" class="headerlink" title="2.4 src包"></a>2.4 src包</h3>
+      <ul>
+<li><strong>a_MainProgram</strong><ul>
+<li>文件前缀_0至_12，共13个处理流程文件</li>
+</ul>
+</li>
+<li><strong>b_Plot</strong><ul>
+<li>文件前缀_4至_11_4，共11个绘图文件</li>
+</ul>
+</li>
+<li><strong>c_Functions</strong></li>
+</ul>
+
+        <h2 id="三、数据处理流程说明"   >
+          <a href="#三、数据处理流程说明" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、数据处理流程说明" class="headerlink" title="三、数据处理流程说明"></a>三、数据处理流程说明</h2>
+      <p><strong>数据处理流程文件均在<em>src</em>包的<em>a_MainProgram</em>目录下</strong></p>
+
+        <h2 id="3-1-a-prepare-data"   >
+          <a href="#3-1-a-prepare-data" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1-a-prepare-data" class="headerlink" title="3.1 a_prepare_data"></a>3.1 a_prepare_data</h2>
+      
+        <h3 id="0-zip-file-rename"   >
+          <a href="#0-zip-file-rename" class="heading-link"><i class="fas fa-link"></i></a><a href="#0-zip-file-rename" class="headerlink" title="0_zip file rename"></a>0_zip file rename</h3>
+      <p>将<strong>0_OrigData</strong>目录下的zip_file压缩csv文件，解压缩到<strong>0_OrigData根目录</strong>下：命名规则:<strong>orig_data_{i}.csv</strong></p>
+
+        <h3 id="1-csv-to-sql"   >
+          <a href="#1-csv-to-sql" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-csv-to-sql" class="headerlink" title="1_csv to sql"></a>1_csv to sql</h3>
+      <p>读取文件：<strong>orig_data_{i}.csv</strong>，处理字段名为<strong>d</strong>的json格式数据，将源数据集分为三类（class1,class2,class3），按<strong>batt{i}_1、batt{i}_2、batt{i}_3</strong>命名格式导入数据库</p>
+
+        <h3 id="2-reduction-t0"   >
+          <a href="#2-reduction-t0" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-reduction-t0" class="headerlink" title="2_reduction t0"></a>2_reduction t0</h3>
+      <ol>
+<li>连接数据库：计算<strong>batt{i}_2</strong>中最早的时间字段值写入csv文件,命名为<strong>t0.csv</strong>。</li>
+</ol>
+<p>保存路径为：<strong>data_reduction</strong>目录下</p>
+<ol start="2">
+<li>连接数据库：从<strong>batt{i}_2</strong>中提取关键字段，并对时间序列进行筛选。写入csv文件，命名为<strong>data.csv</strong>。</li>
+</ol>
+<p>保存路径：<strong>data_reduction</strong>目录下</p>
+
+        <h3 id="3-repetitive-clean"   >
+          <a href="#3-repetitive-clean" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-repetitive-clean" class="headerlink" title="3_repetitive clean"></a>3_repetitive clean</h3>
+      <p>读取<strong>data_reduction</strong>目录下的<strong>t0、data</strong>文件，计算得出后续使用的t_2字段，写入csv文件，命名为<strong>t_2.csv</strong>。（t_0与data同样保存）</p>
+<p>保存路径：<strong>repetitive_data_clean</strong>目录下</p>
+
+        <h2 id="3-2-c-data-2-process"   >
+          <a href="#3-2-c-data-2-process" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2-c-data-2-process" class="headerlink" title="3.2 c_data_2_process"></a>3.2 c_data_2_process</h2>
+      
+        <h3 id="4-data-sort"   >
+          <a href="#4-data-sort" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-data-sort" class="headerlink" title="4_data sort"></a>4_data sort</h3>
+      <p>读取<strong>repetitive_data_clean</strong>目录下的文件，计算ah和wh，并按时间分段，得到<strong>t、ss、se、seg_ct、data</strong>等数据集。</p>
+<p>保存路径：<strong>data_2_sort</strong>目录下</p>
+
+        <h3 id="5-idle-separation"   >
+          <a href="#5-idle-separation" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-idle-separation" class="headerlink" title="5_idle separation"></a>5_idle separation</h3>
+      <p>读取<strong>data_2_sort</strong>目录下的文件，将数据分为op和idle两类。</p>
+<p>保存路径：<strong>idle_data_separation</strong>目录下的<strong>op和idle</strong>文件夹</p>
+
+        <h3 id="6-op-data-seg"   >
+          <a href="#6-op-data-seg" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-op-data-seg" class="headerlink" title="6_op data seg"></a>6_op data seg</h3>
+      <p>读取<strong>idle_data_separation/op</strong>目录下的文件，根据时间差分段。</p>
+<p>保存路径：<strong>op_data_time_seg</strong>目录下</p>
+
+        <h3 id="7-chrg-and-rls-separation"   >
+          <a href="#7-chrg-and-rls-separation" class="heading-link"><i class="fas fa-link"></i></a><a href="#7-chrg-and-rls-separation" class="headerlink" title="7_chrg and rls separation"></a>7_chrg and rls separation</h3>
+      <p>读取<strong>op_data_time_seg</strong>目录下的文件，根据电压将数据分类排序，分为chrg和rls。</p>
+<p>保存路径：<strong>chrg_rls_seperation</strong>目录下</p>
+
+        <h3 id="8-chrg-data-extract"   >
+          <a href="#8-chrg-data-extract" class="heading-link"><i class="fas fa-link"></i></a><a href="#8-chrg-data-extract" class="headerlink" title="8_chrg data extract"></a>8_chrg data extract</h3>
+      <p>读取<strong>chrg_rls_seperation</strong>目录下的数据，提取chrg数据。</p>
+<p>保存路径：<strong>chrg_data_extract</strong>目录下</p>
+
+        <h3 id="9-rls-data-extract"   >
+          <a href="#9-rls-data-extract" class="heading-link"><i class="fas fa-link"></i></a><a href="#9-rls-data-extract" class="headerlink" title="9_rls data extract"></a>9_rls data extract</h3>
+      <p>读取<strong>chrg_rls_seperation</strong>目录下的数据，提取rls数据。</p>
+<p>保存路径：<strong>rls_data_extract</strong>目录下</p>
+
+        <h2 id="3-3-d-data-2-chrg-capacity"   >
+          <a href="#3-3-d-data-2-chrg-capacity" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-3-d-data-2-chrg-capacity" class="headerlink" title="3.3 d_data_2_chrg_capacity"></a>3.3 d_data_2_chrg_capacity</h2>
+      
+        <h3 id="10-chrg-curr-diff-clean"   >
+          <a href="#10-chrg-curr-diff-clean" class="heading-link"><i class="fas fa-link"></i></a><a href="#10-chrg-curr-diff-clean" class="headerlink" title="10_chrg curr diff clean"></a>10_chrg curr diff clean</h3>
+      <p>读取<strong>chrg_data_extract</strong>目录下的数据，剔除电流值小于下限值的数据。</p>
+<p>保存路径：<strong>chrg_curr_diff_clean</strong>目录下</p>
+
+        <h2 id="3-4-final-result-cdc-capacity-analysis"   >
+          <a href="#3-4-final-result-cdc-capacity-analysis" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-4-final-result-cdc-capacity-analysis" class="headerlink" title="3.4 final_result_cdc_capacity_analysis"></a>3.4 final_result_cdc_capacity_analysis</h2>
+      
+        <h3 id="11-cdc-capacity-calc"   >
+          <a href="#11-cdc-capacity-calc" class="heading-link"><i class="fas fa-link"></i></a><a href="#11-cdc-capacity-calc" class="headerlink" title="11_cdc capacity calc"></a>11_cdc capacity calc</h3>
+      <p>读取<strong>chrg_curr_diff_clean</strong>目录下的数据，计算cap、cap_mean、tm、tn等字段，得到剩余电池容量与电池容量趋势。</p>
+<p>保存路径：<strong>cdc_capacity_analysis</strong>目录下</p>
+
+        <h3 id="12-info-to-sql"   >
+          <a href="#12-info-to-sql" class="heading-link"><i class="fas fa-link"></i></a><a href="#12-info-to-sql" class="headerlink" title="12_info to sql"></a>12_info to sql</h3>
+      <ol>
+<li>从<strong>chrg_rls_seperation</strong>目录下读取folder、id、cyc、min、max字段</li>
+<li>从<strong>cdc_capacity_analysis</strong>目录下读取cap文件的folder、capacity字段</li>
+<li>从<strong>cdc_capacity_analysis</strong>目录下读取cap_mean文件的folder、cap_mean字段</li>
+<li>从<strong>cdc_capacity_analysis</strong>目录下读取tn文件的folder、tn字段</li>
+</ol>
+<ul>
+<li>汇总1-4步的数据(目前选用了test.py文件)</li>
+</ul>
+<p>关键字段如下：</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">BatteryData</span>(<span class="title class_ inherited__">Base</span>):</span><br><span class="line">    __tablename__ = <span class="string">&#x27;battery_data&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">id</span> = Column(Integer, primary_key=<span class="literal">True</span>, autoincrement=<span class="literal">True</span>)</span><br><span class="line">    batt_folder = Column(String(<span class="number">255</span>), nullable=<span class="literal">False</span>)</span><br><span class="line">    battery_id = Column(Integer, nullable=<span class="literal">False</span>)</span><br><span class="line">    min_value = Column(DateTime, nullable=<span class="literal">False</span>)</span><br><span class="line">    max_value = Column(DateTime, nullable=<span class="literal">False</span>)</span><br><span class="line">    cyc_count = Column(Integer, nullable=<span class="literal">False</span>)</span><br><span class="line">    capacity = Column(Float, nullable=<span class="literal">False</span>)</span><br><span class="line">    cap_mean = Column(String(<span class="number">255</span>), nullable=<span class="literal">False</span>)  </span><br><span class="line">    tn = Column(String(<span class="number">255</span>), nullable=<span class="literal">False</span>) </span><br></pre></td></tr></table></div></figure>
+<p><strong>根据汇总字段数据用于Web前端数据展示。</strong></p>
+
+        <h2 id="四、数据图表绘制说明"   >
+          <a href="#四、数据图表绘制说明" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、数据图表绘制说明" class="headerlink" title="四、数据图表绘制说明"></a>四、数据图表绘制说明</h2>
+      <ol>
+<li><p>前缀：_4至_10均为相同绘制<strong>辅助图形</strong>代码，用于查验计算过程是否出错，是否存在异常数据。</p>
+</li>
+<li><p>前缀: _11均为绘制计算<strong>结果图形</strong>代码，用于展示剩余容量与趋势。</p>
+</li>
+</ol>
+
+        <h2 id="五、app-py"   >
+          <a href="#五、app-py" class="heading-link"><i class="fas fa-link"></i></a><a href="#五、app-py" class="headerlink" title="五、app.py"></a>五、app.py</h2>
+      <p>src目录下的app.py为执行脚本，选定保存数据库，一键执行上述所有步骤。</p>
+
+        <h2 id="记录日期（2024年7月29日16点07分）"   >
+          <a href="#记录日期（2024年7月29日16点07分）" class="heading-link"><i class="fas fa-link"></i></a><a href="#记录日期（2024年7月29日16点07分）" class="headerlink" title="记录日期（2024年7月29日16点07分）"></a>记录日期（2024年7月29日16点07分）</h2>
+      </div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://whisme.github.io">whisme</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://whisme.github.io/2024/07/29/%E7%94%B5%E6%B1%A0%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/">https://whisme.github.io/2024/07/29/%E7%94%B5%E6%B1%A0%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://whisme.github.io/tags/%E7%94%B5%E6%B1%A0%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">电池数据处理</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://whisme.github.io/tags/%E5%B7%A5%E4%BD%9C/">工作</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2024/06/24/%E8%B6%85%E5%A3%B0%E6%B3%A2/"><span class="paginator-prev__text">超声波</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%B5%E6%B1%A0%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">
+          电池数据分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">
+          一、项目结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%BB%93%E6%9E%84%E8%AF%B4%E6%98%8E"><span class="toc-number">1.2.</span> <span class="toc-text">
+          二、结构说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%A0%B9%E7%9B%AE%E5%BD%95batt-redcode%E4%B8%8B%E5%85%B1%E4%B8%89%E4%B8%AApackage%EF%BC%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">
+          2.1 根目录batt_redcode下共三个package：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-0-OrigData%E5%8C%85"><span class="toc-number">1.2.2.</span> <span class="toc-text">
+          2.2 0_OrigData包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-batt-result%E5%8C%85"><span class="toc-number">1.2.3.</span> <span class="toc-text">
+          2.3 batt_result包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-src%E5%8C%85"><span class="toc-number">1.2.4.</span> <span class="toc-text">
+          2.4 src包</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E"><span class="toc-number">1.3.</span> <span class="toc-text">
+          三、数据处理流程说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-a-prepare-data"><span class="toc-number">1.4.</span> <span class="toc-text">
+          3.1 a_prepare_data</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-zip-file-rename"><span class="toc-number">1.4.1.</span> <span class="toc-text">
+          0_zip file rename</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-csv-to-sql"><span class="toc-number">1.4.2.</span> <span class="toc-text">
+          1_csv to sql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-reduction-t0"><span class="toc-number">1.4.3.</span> <span class="toc-text">
+          2_reduction t0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-repetitive-clean"><span class="toc-number">1.4.4.</span> <span class="toc-text">
+          3_repetitive clean</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-c-data-2-process"><span class="toc-number">1.5.</span> <span class="toc-text">
+          3.2 c_data_2_process</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-data-sort"><span class="toc-number">1.5.1.</span> <span class="toc-text">
+          4_data sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-idle-separation"><span class="toc-number">1.5.2.</span> <span class="toc-text">
+          5_idle separation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-op-data-seg"><span class="toc-number">1.5.3.</span> <span class="toc-text">
+          6_op data seg</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-chrg-and-rls-separation"><span class="toc-number">1.5.4.</span> <span class="toc-text">
+          7_chrg and rls separation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-chrg-data-extract"><span class="toc-number">1.5.5.</span> <span class="toc-text">
+          8_chrg data extract</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-rls-data-extract"><span class="toc-number">1.5.6.</span> <span class="toc-text">
+          9_rls data extract</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-d-data-2-chrg-capacity"><span class="toc-number">1.6.</span> <span class="toc-text">
+          3.3 d_data_2_chrg_capacity</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-chrg-curr-diff-clean"><span class="toc-number">1.6.1.</span> <span class="toc-text">
+          10_chrg curr diff clean</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-final-result-cdc-capacity-analysis"><span class="toc-number">1.7.</span> <span class="toc-text">
+          3.4 final_result_cdc_capacity_analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-cdc-capacity-calc"><span class="toc-number">1.7.1.</span> <span class="toc-text">
+          11_cdc capacity calc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-info-to-sql"><span class="toc-number">1.7.2.</span> <span class="toc-text">
+          12_info to sql</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%95%B0%E6%8D%AE%E5%9B%BE%E8%A1%A8%E7%BB%98%E5%88%B6%E8%AF%B4%E6%98%8E"><span class="toc-number">1.8.</span> <span class="toc-text">
+          四、数据图表绘制说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81app-py"><span class="toc-number">1.9.</span> <span class="toc-text">
+          五、app.py</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E6%97%A5%E6%9C%9F%EF%BC%882024%E5%B9%B47%E6%9C%8829%E6%97%A516%E7%82%B907%E5%88%86%EF%BC%89"><span class="toc-number">1.10.</span> <span class="toc-text">
+          记录日期（2024年7月29日16点07分）</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/assets/avatar.png" alt="avatar"></div></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">22</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">7</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">12</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2024</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>whisme</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
