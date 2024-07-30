@@ -28,7 +28,60 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">小王同学</div><div class="header-banner-info__subtitle">any way the wind blows</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2023/03/16/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB%E7%AC%AC%E4%B8%80%E7%AB%A0/">模式识别（第一章）</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-03-16</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-03-16</span></span></div></header><div class="post-body"><div class="post-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">小王同学</div><div class="header-banner-info__subtitle">any way the wind blows</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2023/03/16/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB%E7%AC%AC%E4%BA%8C%E7%AB%A0/">模式识别（第二章）</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-03-16</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-03-16</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="贝叶斯决策"   >
+          <a href="#贝叶斯决策" class="heading-link"><i class="fas fa-link"></i></a><a href="#贝叶斯决策" class="headerlink" title="贝叶斯决策"></a>贝叶斯决策</h1>
+      
+        <h2 id="基本概念"   >
+          <a href="#基本概念" class="heading-link"><i class="fas fa-link"></i></a><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2>
+      <ul>
+<li>1.先验概率<ul>
+<li>预先已知或可以估计的某种类型的概率<ul>
+<li>某地癌症发生率为5%<ul>
+<li><strong>正常类：P=（ω 1）=99.5%</strong></li>
+<li><strong>异常类：P=（ω 2）=0.5%</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2.类条件概率<ul>
+<li>某一类x出现的概率，例如这个x可以是阳性或阴性。<ul>
+<li>正常类出现的概率为1%，异常类出现的概率为95%<ul>
+<li><strong>正常类：P=（x|ω1）=1%</strong></li>
+<li><strong>异常类：P=（x|ω2）=95%</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3.后验概率<ul>
+<li>x条件下位于某种类型的概率<ul>
+<li>例如出现数据x且正常类的概率是67.7%，那么异常类的概率就是32.3%。<ul>
+<li><strong>正常类：P=（ω1|x）=67.7%</strong></li>
+<li><strong>异常类：P=（ω2|x）=32.3%</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="最小错误率"   >
+          <a href="#最小错误率" class="heading-link"><i class="fas fa-link"></i></a><a href="#最小错误率" class="headerlink" title="最小错误率"></a>最小错误率</h2>
+      <ul>
+<li>哪一类的概率大就分到哪一类（判断x属于哪一类的概率最大）</li>
+</ul>
+
+        <h2 id="最小风险条件"   >
+          <a href="#最小风险条件" class="heading-link"><i class="fas fa-link"></i></a><a href="#最小风险条件" class="headerlink" title="最小风险条件"></a>最小风险条件</h2>
+      <ul>
+<li>哪一类风险小就选择哪一类</li>
+</ul>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2023/03/16/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB%E7%AC%AC%E4%B8%80%E7%AB%A0/">模式识别（第一章）</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-03-16</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-03-16</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h2 id="模式和模式类"   >
           <a href="#模式和模式类" class="heading-link"><i class="fas fa-link"></i></a><a href="#模式和模式类" class="headerlink" title="模式和模式类"></a>模式和模式类</h2>
       <ul>
@@ -595,35 +648,4 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.2"></he
         <h2 id="小结："   >
           <a href="#小结：" class="heading-link"><i class="fas fa-link"></i></a><a href="#小结：" class="headerlink" title="小结："></a>小结：</h2>
       <p>通过第二次实验我们使我们掌握了常量函数的定义（#define 常量名 值），输入函数的使用（scanf（“数据类型”，&amp;变量）），如何从键盘接收到输入的内容，按格式输出数值，控制数值的长度与小数位数和左右对齐等；根据ASCILL码去转换一个字母的大写与小写；在实验过程中，我们遇到的难题就是第三题，无法控制输出数值的格式，无论怎么改都不能达到题目要求的样子，最后我们根据课本以及课件的知识点与例题的分析，发现%-14.6f：正负号是用来控制左对齐或右对齐的，14.6意味着14是数值长度，.6则是控制小数位数；而左对齐与右对齐就是实现c=15.707950      a=19.634937输出中间的这段空白；并发现这里也可以通过添加（\t)转义制表符来达到类似的效果。<br>要学好C语言就要先懂得最基本的语法知识，看课本是必需的。我觉得看不懂也没关系，尽力去理解就好了，在对知识有了一个大致的了解过后，就要上机实践。学习C语言一定要动手，只看不做，眼高手低是不行的。</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/09/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">计算机网络的体系结构</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-09-17</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-10-14</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h1 id="计算机网络的体系结构"   >
-          <a href="#计算机网络的体系结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#计算机网络的体系结构" class="headerlink" title="计算机网络的体系结构"></a>计算机网络的体系结构</h1>
-      
-        <h2 id="计算机术语"   >
-          <a href="#计算机术语" class="heading-link"><i class="fas fa-link"></i></a><a href="#计算机术语" class="headerlink" title="计算机术语"></a><strong>计算机术语</strong></h2>
-      
-        <h2 id="实体与对等实体"   >
-          <a href="#实体与对等实体" class="heading-link"><i class="fas fa-link"></i></a><a href="#实体与对等实体" class="headerlink" title="实体与对等实体"></a>实体与对等实体</h2>
-      <ul>
-<li>源和目标</li>
-<li>源：通信过程中，数据发送方（信源）</li>
-<li>目标：通信过程中，数据接收方（信宿）
-        <h2 id="协议"   >
-          <a href="#协议" class="heading-link"><i class="fas fa-link"></i></a><a href="#协议" class="headerlink" title="协议"></a>协议</h2>
-      </li>
-<li>为网络通信所指定的一组规则，约定和标准。</li>
-<li>协议可以使通信更有效地进行，是控制两个对等实体进行通信的规则的集合
-        <h2 id="协议的三大要素"   >
-          <a href="#协议的三大要素" class="heading-link"><i class="fas fa-link"></i></a><a href="#协议的三大要素" class="headerlink" title="协议的三大要素"></a>协议的三大要素</h2>
-      </li>
-<li> 语法</li>
-<li> 语义</li>
-<li> 语序  
-        <h2 id="服务与接口"   >
-          <a href="#服务与接口" class="heading-link"><i class="fas fa-link"></i></a><a href="#服务与接口" class="headerlink" title="服务与接口"></a>服务与接口</h2>
-      </li>
-<li>Question：为什么要分层</li>
-<li>Answer： 为了降低复杂性，提高灵活性</li>
-<li>好处：各层之间是独立的，灵活性好，结构上可以分割开，易于实现维护，促进标准化工作</li>
-</ul>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/assets/avatar.png" alt="avatar"></div></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">22</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">7</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">12</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2024</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>whisme</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/assets/avatar.png" alt="avatar"></div></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">23</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">7</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">14</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2024</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>whisme</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
